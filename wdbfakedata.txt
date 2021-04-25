@@ -1,0 +1,26 @@
+[
+  '{{repeat(6, 15)}}',
+  {
+    _id: '{{objectId()}}',
+    username: '{{surname().toLowerCase()}}{{firstName().toLowerCase()}}',
+    info: [
+      {
+        name: '{{firstName()}} {{surname()}}',
+        age: '{{integer(16, 40)}}',
+        profession: '{{random("student", "professor", "SWE", "lawyer")}}'
+      }
+    ],
+    activities: [
+      '{{repeat(5, 8)}}',
+      {
+        date: '{{date(new Date(2014, 0, 1), new Date(), "YYYY-MM-ddThh:mm:ss Z")}}',
+        sleep: '{{integer(0, 24)}}',
+        eat: '{{integer(0, 6)}}',
+        study: '{{ineger(0, 24)}}',
+        exercise: '{{integer(0, 5)}}',
+        lecture: '{{ineger(0, 12)}}',
+        exam: '{{integer(0, 6)}}'
+      }
+    ]
+  }
+]
