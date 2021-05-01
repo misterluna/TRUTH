@@ -1,4 +1,5 @@
 import React from "react";
+import { Link as ReachLink } from "@reach/router";
 import { HStack, Button, Image, Link } from "@chakra-ui/react";
 
 import LargeLogo from "./assets/logo-full-large.svg";
@@ -16,22 +17,24 @@ function MenuBar() {
     >
       <Image src={LargeLogo} />
       <HStack spacing={12}>
-        <Link fontSize="xl" fontWeight="light">
+        <Link fontSize="xl" fontWeight="light" as={ReachLink} to="/">
           Home
         </Link>
-        <Link fontSize="xl" fontWeight="light">
+        <Link fontSize="xl" fontWeight="light" as={ReachLink} to="/about">
           About
         </Link>
-        <Button
-          colorScheme="blue"
-          bg="blue.900"
-          size="md"
-          px={8}
-          fontSize="lg"
-          fontWeight="light"
-        >
-          Login
-        </Button>
+        <Link as={ReachLink} to="/dashboard">
+          <Button
+            colorScheme="blue"
+            bg="blue.900"
+            size="md"
+            px={8}
+            fontSize="lg"
+            fontWeight="light"
+          >
+            Login
+          </Button>
+        </Link>
       </HStack>
     </HStack>
   );

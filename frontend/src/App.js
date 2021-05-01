@@ -17,7 +17,7 @@ const App = () => {
 
   return (
     <div>
-      <Home />
+      <Dashboard />
       {/* <h1>TEST</h1>
       {users.map((u) => (
         <h4 key={u._id}>userName : {u.username}</h4>

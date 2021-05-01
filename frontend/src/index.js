@@ -7,10 +7,22 @@ import reportWebVitals from "./reportWebVitals";
 import { ChakraProvider } from "@chakra-ui/react";
 import theme from "./theme";
 
+import { Router } from "@reach/router";
+
+import Home from "./components/Home";
+import Dashboard from "./components/Dashboard";
+import Goals from "./components/Goals";
+import Settings from "./components/Settings";
+
 ReactDOM.render(
   <React.StrictMode>
     <ChakraProvider theme={theme}>
-      <App />
+      <Router>
+        <Home path="/" />
+        <Dashboard path="/dashboard" />
+        <Goals path="/goals" />
+        <Settings path="/settings" />
+      </Router>
     </ChakraProvider>
   </React.StrictMode>,
   document.getElementById("root")

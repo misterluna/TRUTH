@@ -1,4 +1,5 @@
 import React from "react";
+import { Link as ReachLink } from "@reach/router";
 import {
   Grid,
   GridItem,
@@ -10,6 +11,7 @@ import {
   Image,
   Text,
   Button,
+  Link,
 } from "@chakra-ui/react";
 
 /* Component Imports */
@@ -21,7 +23,7 @@ import ProfileImg from "./assets/profile-img.svg";
 import IconPlaceholder from "./assets/icon-placeholder.svg";
 import BlueLine from "./assets/sidebar-blue-line.svg";
 
-function Sidebar({}) {
+function Sidebar({ currPage }) {
   return (
     <Grid
       h="100vh"
@@ -61,48 +63,53 @@ function Sidebar({}) {
           <SidebarLink
             text="Dashboard"
             iconSrc="IconPlaceholder"
-            destination=""
-            lineOn={true}
+            destination="/dashboard"
+            lineOn={currPage === "Dashboard"}
           />
           <SidebarLink
             text="Goals"
             iconSrc="IconPlaceholder"
-            destination=""
-            lineOn={false}
+            destination="/goals"
+            lineOn={currPage === "Goals"}
           />
           <SidebarLink
             text="Compare"
             iconSrc="IconPlaceholder"
-            destination=""
-            lineOn={false}
+            destination="/compare"
+            lineOn={currPage === "Compare"}
           />
           <SidebarLink
             text="Settings"
             iconSrc="IconPlaceholder"
-            destination=""
-            lineOn={false}
+            destination="/settings"
+            lineOn={currPage === "Settings"}
           />
         </VStack>
       </GridItem>
       <GridItem rowSpan={1} p={2}>
-        <HStack>
-          <Image src={IconPlaceholder} />
-          <Text>Logout</Text>
-        </HStack>
+        <SidebarLink
+          text="Logout"
+          iconSrc="IconPlaceholder"
+          destination="/"
+          lineOn={false}
+        />
       </GridItem>
     </Grid>
   );
 }
 
 /*
-  --- TODO: Implement links and destination field ---
+  --- TODO: Implement links, destination field, and icons ---
 */
 function SidebarLink({ text, iconSrc, destination, lineOn }) {
+  let hover = lineOn ? {} : { textColor: "blue.300" };
   return (
     <HStack w="100%">
       <Image src={IconPlaceholder} />
-      <Text flexGrow="1">{text}</Text>
-      {lineOn ? <Image src={iconSrc} /> : <></>}
+      <Link flexGrow="1" _hover={hover} as={ReachLink} to={destination}>
+        {text}
+      </Link>
+      {lineOn ? <Image src={BlueLine} /> : <></>}
     </HStack>
   );
 }

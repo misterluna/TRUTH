@@ -16,7 +16,7 @@ function Dashboard({}) {
   return (
     <>
       <HStack>
-        <Sidebar />
+        <Sidebar currPage="Dashboard" />
         <Box bg="white" w="20vw"></Box>
         <Box bg="gray.100" flexGrow="1" px={16} py={12}>
           <DashContent />
