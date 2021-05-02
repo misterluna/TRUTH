@@ -1,879 +1,891 @@
 {
-    "community_data": {
-        "sleep": [
-            2,
-            11,
-            4,
-            11
-        ],
-        "eat": [
-            9,
-            0,
-            4,
-            0
-        ],
-        "outdoors": [
-            8,
-            12,
-            1,
-            8
-        ],
-        "study": [
-            8,
-            12,
-            12,
-            0
-        ],
-        "socialize": [
-            6,
-            12,
-            5,
-            5
-        ],
-        "class": [
-            0,
-            6,
-            0,
-            1
-        ],
-        "exercise": [
-            2,
-            5,
-            12,
-            0
-        ],
-        "gaming": [
-            11,
-            7,
-            1,
-            7
-        ],
-        "travel_commute": [
-            6,
-            9,
-            3,
-            1
-        ]
+  "community_data": [{
+      "sleep": [
+        2,
+        11,
+        4,
+        11
+      ]
     },
-    "user_data": [
+    {
+      "eat": [
+        9,
+        0,
+        4,
+        0
+      ]
+    },
+    {
+      "outdoors": [
+        8,
+        12,
+        1,
+        8
+      ]
+    },
+    {
+      "study": [
+        8,
+        12,
+        12,
+        0
+      ]
+    },
+    {
+      "socialize": [
+        6,
+        12,
+        5,
+        5
+      ]
+    },
+    {
+      "class": [
+        0,
+        6,
+        0,
+        1
+      ]
+    },
+    {
+      "exercise": [
+        2,
+        5,
+        12,
+        0
+      ]
+    },
+    {
+      "gaming": [
+        11,
+        7,
+        1,
+        7
+      ]
+    },
+    {
+      "travel_commute": [
+        6,
+        9,
+        3,
+        1
+      ]
+    }
+  ],
+  "user_data": [{
+      "_id": "6084b6c96b3b53c59e6334c8",
+      "username": "oskithebear",
+      "password": "***",
+      "info": {
+        "name": "Oski",
+        "age": 19,
+        "profession": "student",
+        "profile_picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Oski_pregame_at_UCLA_at_Cal_2008-10-25.JPG/345px-Oski_pregame_at_UCLA_at_Cal_2008-10-25.JPG"
+      },
+      "goals": {
+        "sleep": 7,
+        "eat": 11,
+        "outdoors": 4,
+        "study": 8,
+        "socialize": 7,
+        "class": 12,
+        "exercise": 1,
+        "gaming": 9,
+        "travel_commute": 6
+      },
+      "activities": [
         {
-            "_id": "6084b6c96b3b53c59e6334c8",
-            "username": "oskithebear",
-            "password": "***",
-            "info": {
-                "name": "Oski",
-                "age": "19",
-                "profession": "student",
-                "profile_picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Oski_pregame_at_UCLA_at_Cal_2008-10-25.JPG/345px-Oski_pregame_at_UCLA_at_Cal_2008-10-25.JPG"
+          "date": "2021-04-19",
+          "sleep": 1,
+          "class": 0.75,
+          "outdoors": 1,
+          "exercise": 2,
+          "events": [{
+              "name": "class",
+              "start": "2021-04-19T12:15:00 +07:00",
+              "end": "2021-04-19T13:00:00 +07:00",
+              "duration": 0.75,
+              "description": "61A Lecture, I fell asleep."
             },
-            "goals": {
-                "sleep": 7,
-                "eat": 11,
-                "outdoors": 4,
-                "study": 8,
-                "socialize": 7,
-                "class": 12,
-                "exercise": 1,
-                "gaming": 9,
-                "travel_commute": 6
+            {
+              "name": "outdoors",
+              "start": "2021-04-19T14:00:00 +07:00",
+              "end": "2021-04-19T15:00:00 +07:00",
+              "duration": 1,
+              "description": "Nice sun."
             },
-            "activities": [
-                {
-                    "date": "2021-04-19",
-                    "sleep": 1,
-                    "class": 0.75,
-                    "outdoors": 1,
-                    "exercise": 2,
-                    "events": [
-                        {
-                            "name": "class",
-                            "start": "2021-04-19T12:15:00 +07:00",
-                            "end": "2021-04-19T13:00:00 +07:00",
-                            "duration": 0.75,
-                            "description": "61A Lecture, I fell asleep."
-                        },
-                        {
-                            "name": "outdoors",
-                            "start": "2021-04-19T14:00:00 +07:00",
-                            "end": "2021-04-19T15:00:00 +07:00",
-                            "duration": 1,
-                            "description": "Nice sun."
-                        },
-                        {
-                            "name": "exercise",
-                            "start": "2021-04-19T07:00:00 +07:00",
-                            "end": "2021-04-19T09:00:00 +07:00",
-                            "duration": 2,
-                            "description": "Nice sun."
-                        },
-                        {
-                            "name": "sleep",
-                            "start": "2021-04-19T17:00:00 +07:00",
-                            "end": "20121-04-19T18:00:00 +07:00",
-                            "duration": 1,
-                            "description": "Can't sleep."
-                        },
-                    ]
-                },
-                {
-                    "date": "2021-04-20",
-                    "sleep": 0.5,
-                    "socialize": 0.25,
-                    "gaming": 1.75,
-                    "outdoors": 0.5,
-                    "events": [
-                        {
-                            "name": "socialize",
-                            "start": "2021-04-20T08:15:00 +07:00",
-                            "end": "2021-04-20T08:30:00 +07:00",
-                            "duration": 0.25,
-                            "description": "Good talk."
-                        },
-                        {
-                            "name": "gaming",
-                            "start": "2021-04-20T16:15:00 +07:00",
-                            "end": "2021-04-20T18:00:00 +07:00",
-                            "duration": 1.75,
-                            "description": "Good talk."
-                        },
-                        {
-                            "name": "outdoors",
-                            "start": "2021-04-20T19:15:00 +07:00",
-                            "end": "2021-04-20T19:45:00 +07:00",
-                            "duration": 0.5,
-                            "description": "Saw a cute cat."
-                        },
-                        {
-                            "name": "sleep",
-                            "start": "2021-04-20T20:00:00 +07:00",
-                            "end": "20121-04-20T20:30:00 +07:00",
-                            "duration": 0.5,
-                            "description": "Can't sleep."
-                        },
-                    ]
-                },
-                {
-                    "date": "2021-04-21",
-                    "sleep": 3,
-                    "study": 0.25,
-                    "events": [
-                        {
-                            "name": "sleep",
-                            "start": "2021-04-21T15:00:00 +07:00",
-                            "end": "20121-04-21T18:00:00 +07:00",
-                            "duration": 3,
-                            "description": "Can't sleep."
-                        },
-                        {
-                            "name": "study",
-                            "start": "2021-04-21T08:00:00 +07:00",
-                            "end": "20121-04-21T08:15:00 +07:00",
-                            "duration": 0.25,
-                            "description": "Can't sleep."
-                        }
-                    ]
-                },
-                {
-                    "date": "2021-04-22",
-                    "sleep": 4,
-                    "eat": 1,
-                    "events": [
-                        {
-                            "name": "sleep",
-                            "start": "2021-04-22T14:00:00 +07:00",
-                            "end": "20121-04-22T18:00:00 +07:00",
-                            "duration": 4,
-                            "description": "Can't sleep."
-                        },
-                        {
-                            "name": "eat",
-                            "start": "2021-04-22T04:00:00 +07:00",
-                            "end": "20121-04-22T04:30:00 +07:00",
-                            "duration": 0.5,
-                            "description": "Can't sleep."
-                        },
-                        {
-                            "name": "eat",
-                            "start": "2021-04-22T18:15:00 +07:00",
-                            "end": "20121-04-22T18:45:00 +07:00",
-                            "duration": 0.5,
-                            "description": "Can't sleep."
-                        }
-                    ]
-                },
-                {
-                    "date": "2021-04-23",
-                    "sleep": 1,
-                    "eat": 2,
-                    "outdoors": 1,
-                    "study": 3,
-                    "socialize": 3,
-                    "class": 1,
-                    "exercise": 0.5,
-                    "gaming": 3,
-                    "travel_commute": 0.25,
-                    "events": [
-                        {
-                            "name": "eat",
-                            "start": "2021-04-23T04:00:00 +07:00",
-                            "end": "20121-04-23T05:00:00 +07:00",
-                            "duration": 1,
-                            "description": "Can't sleep."
-                        },
-                        {
-                            "name": "study",
-                            "start": "2021-04-23T06:00:00 +07:00",
-                            "end": "20121-04-23T09:00:00 +07:00",
-                            "duration": 3,
-                            "description": "Can't sleep."
-                        },
-                        {
-                            "name": "eat",
-                            "start": "2021-04-23T11:25:00 +07:00",
-                            "end": "20121-04-23T12:25:00 +07:00",
-                            "duration": 1,
-                            "description": "Can't sleep."
-                        },
-                        {
-                            "name": "outdoors",
-                            "start": "2021-04-23T10:00:00 +07:00",
-                            "end": "20121-04-23T11:00:00 +07:00",
-                            "duration": 1,
-                            "description": "Saw a turkey." 
-                        },
-                        {
-                            "name": "socialize",
-                            "start": "2021-04-23T13:00:00 +07:00",
-                            "end": "20121-04-23T16:00:00 +07:00",
-                            "duration": 3,
-                            "description": "Saw a turkey." 
-
-                        },
-                        {
-                            "name": "travel_commute",
-                            "start": "2021-04-23T16:00:00 +07:00",
-                            "end": "20121-04-23T16:15:00 +07:00",
-                            "duration": 0.25,
-                            "description": "Saw a turkey." 
-                        },
-                        {
-                            "name": "class",
-                            "start": "2021-04-23T16:15:00 +07:00",
-                            "end": "20121-04-23T17:15:00 +07:00",
-                            "duration": 1,
-                            "description": "Saw a turkey." 
-                        },
-                        {
-                            "name": "exercise",
-                            "start": "2021-04-23T17:30:00 +07:00",
-                            "end": "20121-04-23T18:30:00 +07:00",
-                            "duration": 1,
-                            "description": "Saw a turkey." 
-                        },
-                        {
-                            "name": "gaming",
-                            "start": "2021-04-23T19:00:00 +07:00",
-                            "end": "20121-04-23T22:00:00 +07:00",
-                            "duration": 3,
-                            "description": "Killed a turkey." 
-                        },
-                        {
-                            "name": "sleep",
-                            "start": "2021-04-23T23:00:00 +07:00",
-                            "end": "20121-04-23T24:00:00 +07:00",
-                            "duration": 1,
-                            "description": "Dreamed a turkey." 
-                        }
-                    ]
-                },
-                {
-                    "date": "2021-04-24",
-                    "sleep": 2,
-                    "eat": 0.75,
-                    "outdoors": 0.75,
-                    "study": 4,
-                    "socialize": 3,
-                    "class": 1,
-                    "exercise": 0.5,
-                    "gaming": 3,
-                    "travel_commute": 0.25,
-                    "events": [
-                        {
-                            "name": "eat",
-                            "start": "2021-04-24T05:00:00 +07:00",
-                            "end": "20121-04-24T05:45:00 +07:00",
-                            "duration": 0.75,
-                            "description": "Can't sleep."
-                        },
-                        {
-                            "name": "study",
-                            "start": "2021-04-24T06:00:00 +07:00",
-                            "end": "20121-04-24T10:00:00 +07:00",
-                            "duration": 4,
-                            "description": "Can't sleep."
-                        },
-                        {
-                            "name": "outdoors",
-                            "start": "2021-04-24T10:15:00 +07:00",
-                            "end": "20121-04-24T11:00:00 +07:00",
-                            "duration": 0.75,
-                            "description": "Saw a turkey." 
-                        },
-                        {
-                            "name": "socialize",
-                            "start": "2021-04-24T13:00:00 +07:00",
-                            "end": "20121-04-24T16:00:00 +07:00",
-                            "duration": 3,
-                            "description": "Saw a turkey." 
-
-                        },
-                        {
-                            "name": "travel_commute",
-                            "start": "2021-04-24T16:00:00 +07:00",
-                            "end": "20121-04-24T16:15:00 +07:00",
-                            "duration": 0.25,
-                            "description": "Saw a turkey." 
-                        },
-                        {
-                            "name": "class",
-                            "start": "2021-04-24T16:15:00 +07:00",
-                            "end": "20121-04-24T17:15:00 +07:00",
-                            "duration": 1,
-                            "description": "Saw a turkey." 
-                        },
-                        {
-                            "name": "exercise",
-                            "start": "2021-04-24T17:30:00 +07:00",
-                            "end": "20121-04-24T18:30:00 +07:00",
-                            "duration": 1,
-                            "description": "Saw a turkey." 
-                        },
-                        {
-                            "name": "gaming",
-                            "start": "2021-04-24T19:00:00 +07:00",
-                            "end": "20121-04-24T22:00:00 +07:00",
-                            "duration": 3,
-                            "description": "Killed a turkey." 
-                        },
-                        {
-                            "name": "sleep",
-                            "start": "2021-04-24T22:00:00 +07:00",
-                            "end": "20121-04-24T24:00:00 +07:00",
-                            "duration": 2,
-                            "description": "Dreamed a turkey." 
-                        }
-                    ]
-                },
-                {
-                    "date": "2021-04-25",
-                    "sleep": 1,
-                    "eat": 1.5,
-                    "outdoors": 2,
-                    "study": 1.5,
-                    "socialize": 3,
-                    "class": 1,
-                    "exercise": 3,
-                    "gaming": 3,
-                    "travel_commute": 0.25,
-                    "events": [
-                        {
-                            "name": "eat",
-                            "start": "2021-04-25T10:00:00 +07:00",
-                            "end": "20121-04-25T10:45:00 +07:00",
-                            "duration": 0.75,
-                            "description": "Can't sleep."
-                        },
-                        {
-                            "name": "study",
-                            "start": "2021-04-25T03:00:00 +07:00",
-                            "end": "20121-04-25T04:30:00 +07:00",
-                            "duration": 1.5,
-                            "description": "Can't sleep."
-                        },
-                        {
-                            "name": "eat",
-                            "start": "2021-04-25T18:25:00 +07:00",
-                            "end": "20121-04-25T19:00:00 +07:00",
-                            "duration": 0.75,
-                            "description": "Can't sleep."
-                        },
-                        {
-                            "name": "outdoors",
-                            "start": "2021-04-25T04:00:00 +07:00",
-                            "end": "20121-04-25T06:00:00 +07:00",
-                            "duration": 2,
-                            "description": "Saw a turkey." 
-                        },
-                        {
-                            "name": "exercise",
-                            "start": "2021-04-25T13:00:00 +07:00",
-                            "end": "20121-04-25T16:00:00 +07:00",
-                            "duration": 3,
-                            "description": "Saw a turkey." 
-
-                        },
-                        {
-                            "name": "travel_commute",
-                            "start": "2021-04-25T16:00:00 +07:00",
-                            "end": "20121-04-25T16:15:00 +07:00",
-                            "duration": 0.25,
-                            "description": "Saw a turkey." 
-                        },
-                        {
-                            "name": "class",
-                            "start": "2021-04-25T16:15:00 +07:00",
-                            "end": "20121-04-25T17:15:00 +07:00",
-                            "duration": 1,
-                            "description": "Saw a turkey." 
-                        },
-                        {
-                            "name": "socialize",
-                            "start": "2021-04-25T17:30:00 +07:00",
-                            "end": "20121-04-25T18:30:00 +07:00",
-                            "duration": 1,
-                            "description": "Saw a turkey." 
-                        },
-                        {
-                            "name": "gaming",
-                            "start": "2021-04-25T19:00:00 +07:00",
-                            "end": "20121-04-25T22:00:00 +07:00",
-                            "duration": 3,
-                            "description": "Killed a turkey." 
-                        },
-                        {
-                            "name": "sleep",
-                            "start": "2021-04-25T23:00:00 +07:00",
-                            "end": "20121-04-25T24:00:00 +07:00",
-                            "duration": 1,
-                            "description": "Dreamed a turkey." 
-                        }
-                    ]
-                },
-                {
-                    "date": "2021-04-26",
-                    "sleep": 4,
-                    "eat": 0.5,
-                    "gaming": 10,
-                    "events": [
-                        {
-                            "name": "sleep",
-                            "start": "2021-04-26T16:00:00 +07:00",
-                            "end": "20121-04-26T20:00:00 +07:00",
-                            "duration": 4,
-                            "description": "Can't sleep."
-                        },
-                        {
-                            "name": "eat",
-                            "start": "2021-04-26T04:00:00 +07:00",
-                            "end": "20121-04-26T04:30:00 +07:00",
-                            "duration": 0.5,
-                            "description": "Can't sleep."
-                        },
-                        {
-                            "name": "gaming",
-                            "start": "2021-04-26T05:00:00 +07:00",
-                            "end": "20121-04-26T15:00:00 +07:00",
-                            "duration": 10,
-                            "description": "Can't sleep."
-                        }
-                    ]
-                },
-                {
-                    "date": "2021-04-27",
-                    "sleep": 1,
-                    "eat": 1.5,
-                    "outdoors": 2,
-                    "study": 1.5,
-                    "socialize": 3,
-                    "class": 1,
-                    "exercise": 3,
-                    "gaming": 3,
-                    "travel_commute": 0.25,
-                    "events": [
-                        {
-                            "name": "eat",
-                            "start": "2021-04-27T10:00:00 +07:00",
-                            "end": "20121-04-27T10:45:00 +07:00",
-                            "duration": 0.75,
-                            "description": "Can't sleep."
-                        },
-                        {
-                            "name": "study",
-                            "start": "2021-04-27T03:00:00 +07:00",
-                            "end": "20121-04-27T04:30:00 +07:00",
-                            "duration": 1.5,
-                            "description": "Can't sleep."
-                        },
-                        {
-                            "name": "eat",
-                            "start": "2021-04-27T18:25:00 +07:00",
-                            "end": "20121-04-27T19:00:00 +07:00",
-                            "duration": 0.75,
-                            "description": "Can't sleep."
-                        },
-                        {
-                            "name": "outdoors",
-                            "start": "2021-04-27T04:00:00 +07:00",
-                            "end": "20121-04-27T06:00:00 +07:00",
-                            "duration": 2,
-                            "description": "Saw a turkey." 
-                        },
-                        {
-                            "name": "exercise",
-                            "start": "2021-04-27T13:00:00 +07:00",
-                            "end": "20121-04-27T16:00:00 +07:00",
-                            "duration": 3,
-                            "description": "Saw a turkey." 
-
-                        },
-                        {
-                            "name": "travel_commute",
-                            "start": "2021-04-27T16:00:00 +07:00",
-                            "end": "20121-04-27T16:15:00 +07:00",
-                            "duration": 0.25,
-                            "description": "Saw a turkey." 
-                        },
-                        {
-                            "name": "class",
-                            "start": "2021-04-27T16:15:00 +07:00",
-                            "end": "20121-04-27T17:15:00 +07:00",
-                            "duration": 1,
-                            "description": "Saw a turkey." 
-                        },
-                        {
-                            "name": "socialize",
-                            "start": "2021-04-27T17:30:00 +07:00",
-                            "end": "20121-04-27T18:30:00 +07:00",
-                            "duration": 1,
-                            "description": "Saw a turkey." 
-                        },
-                        {
-                            "name": "gaming",
-                            "start": "2021-04-27T19:00:00 +07:00",
-                            "end": "20121-04-27T22:00:00 +07:00",
-                            "duration": 3,
-                            "description": "Killed a turkey." 
-                        },
-                        {
-                            "name": "sleep",
-                            "start": "2021-04-27T23:00:00 +07:00",
-                            "end": "20121-04-27T24:00:00 +07:00",
-                            "duration": 1,
-                            "description": "Dreamed a turkey." 
-                        }
-                    ]
-                },
-                {
-                    "date": "2021-04-28",
-                    "sleep": 1,
-                    "eat": 1.5,
-                    "outdoors": 2,
-                    "study": 1.5,
-                    "socialize": 3,
-                    "class": 1,
-                    "exercise": 3,
-                    "gaming": 3,
-                    "travel_commute": 0.25,
-                    "events": [
-                        {
-                            "name": "eat",
-                            "start": "2021-04-28T10:00:00 +07:00",
-                            "end": "20121-04-28T10:45:00 +07:00",
-                            "duration": 0.75,
-                            "description": "Can't sleep."
-                        },
-                        {
-                            "name": "study",
-                            "start": "8021-04-28T03:00:00 +07:00",
-                            "end": "20121-04-28T04:30:00 +07:00",
-                            "duration": 1.5,
-                            "description": "Can't sleep."
-                        },
-                        {
-                            "name": "eat",
-                            "start": "2021-04-28T18:25:00 +07:00",
-                            "end": "20121-04-28T19:00:00 +07:00",
-                            "duration": 0.75,
-                            "description": "Can't sleep."
-                        },
-                        {
-                            "name": "outdoors",
-                            "start": "2021-04-28T04:00:00 +07:00",
-                            "end": "20121-04-28T06:00:00 +07:00",
-                            "duration": 2,
-                            "description": "Saw a turkey." 
-                        },
-                        {
-                            "name": "exercise",
-                            "start": "2021-04-28T13:00:00 +07:00",
-                            "end": "20121-04-28T16:00:00 +07:00",
-                            "duration": 3,
-                            "description": "Saw a turkey." 
-
-                        },
-                        {
-                            "name": "travel_commute",
-                            "start": "2021-04-28T16:00:00 +07:00",
-                            "end": "20121-04-28T16:15:00 +07:00",
-                            "duration": 0.25,
-                            "description": "Saw a turkey." 
-                        },
-                        {
-                            "name": "class",
-                            "start": "2021-04-28T16:15:00 +07:00",
-                            "end": "20121-04-28T17:15:00 +07:00",
-                            "duration": 1,
-                            "description": "Saw a turkey." 
-                        },
-                        {
-                            "name": "socialize",
-                            "start": "2021-04-28T17:30:00 +07:00",
-                            "end": "20121-04-28T18:30:00 +07:00",
-                            "duration": 1,
-                            "description": "Saw a turkey." 
-                        },
-                        {
-                            "name": "gaming",
-                            "start": "2021-04-28T19:00:00 +07:00",
-                            "end": "20121-04-28T22:00:00 +07:00",
-                            "duration": 3,
-                            "description": "Killed a turkey." 
-                        },
-                        {
-                            "name": "sleep",
-                            "start": "2021-04-28T23:00:00 +07:00",
-                            "end": "20121-04-28T24:00:00 +07:00",
-                            "duration": 1,
-                            "description": "Dreamed a turkey." 
-                        }
-                    ]
-                },
-                {
-                    "date": "2021-04-29",
-                    "sleep": 1,
-                    "class": 0.75,
-                    "outdoors": 1,
-                    "exercise": 2,
-                    "events": [
-                        {
-                            "name": "class",
-                            "start": "2021-04-29T12:15:00 +07:00",
-                            "end": "2021-04-29T13:00:00 +07:00",
-                            "duration": 0.75,
-                            "description": "61A Lecture, I fell asleep."
-                        },
-                        {
-                            "name": "outdoors",
-                            "start": "2021-04-29T14:00:00 +07:00",
-                            "end": "2021-04-29T15:00:00 +07:00",
-                            "duration": 1,
-                            "description": "Nice sun."
-                        },
-                        {
-                            "name": "exercise",
-                            "start": "2021-04-29T07:00:00 +07:00",
-                            "end": "2021-04-29T09:00:00 +07:00",
-                            "duration": 2,
-                            "description": "Nice sun."
-                        },
-                        {
-                            "name": "sleep",
-                            "start": "2021-04-29T17:00:00 +07:00",
-                            "end": "20121-04-29T18:00:00 +07:00",
-                            "duration": 1,
-                            "description": "Can't sleep."
-                        },
-                    ]
-                },
-                {
-                    "date": "2021-04-30",
-                    "sleep": 4,
-                    "eat": 0.5,
-                    "gaming": 10,
-                    "events": [
-                        {
-                            "name": "sleep",
-                            "start": "2021-04-30T16:00:00 +07:00",
-                            "end": "20121-04-30T20:00:00 +07:00",
-                            "duration": 4,
-                            "description": "Can't sleep."
-                        },
-                        {
-                            "name": "eat",
-                            "start": "2021-04-30T04:00:00 +07:00",
-                            "end": "20121-04306T04:30:00 +07:00",
-                            "duration": 0.5,
-                            "description": "Can't sleep."
-                        },
-                        {
-                            "name": "gaming",
-                            "start": "2021-04-30T05:00:00 +07:00",
-                            "end": "20121-04-30T15:00:00 +07:00",
-                            "duration": 10,
-                            "description": "Can't sleep."
-                        }
-                    ]
-                },
-                {
-                    "date": "2021-05-01",
-                    "sleep": 1,
-                    "eat": 1.5,
-                    "outdoors": 2,
-                    "study": 1.5,
-                    "socialize": 3,
-                    "class": 1,
-                    "exercise": 3,
-                    "gaming": 3,
-                    "travel_commute": 0.25,
-                    "events": [
-                        {
-                            "name": "eat",
-                            "start": "2021-05-01T10:00:00 +07:00",
-                            "end": "20121-05-01T10:45:00 +07:00",
-                            "duration": 0.75,
-                            "description": "Can't sleep."
-                        },
-                        {
-                            "name": "study",
-                            "start": "2021-05-01T03:00:00 +07:00",
-                            "end": "20121-05-01T04:30:00 +07:00",
-                            "duration": 1.5,
-                            "description": "Can't sleep."
-                        },
-                        {
-                            "name": "eat",
-                            "start": "2021-05-01T18:25:00 +07:00",
-                            "end": "20121-05-01T19:00:00 +07:00",
-                            "duration": 0.75,
-                            "description": "Can't sleep."
-                        },
-                        {
-                            "name": "outdoors",
-                            "start": "2021-05-01T04:00:00 +07:00",
-                            "end": "20121-05-01T06:00:00 +07:00",
-                            "duration": 2,
-                            "description": "Saw a turkey." 
-                        },
-                        {
-                            "name": "exercise",
-                            "start": "2021-05-01T13:00:00 +07:00",
-                            "end": "20121-05-01T16:00:00 +07:00",
-                            "duration": 3,
-                            "description": "Saw a turkey." 
-
-                        },
-                        {
-                            "name": "travel_commute",
-                            "start": "2021-05-01T16:00:00 +07:00",
-                            "end": "20121-05-01T16:15:00 +07:00",
-                            "duration": 0.25,
-                            "description": "Saw a turkey." 
-                        },
-                        {
-                            "name": "class",
-                            "start": "2021-05-01T16:15:00 +07:00",
-                            "end": "20121-05-01T17:15:00 +07:00",
-                            "duration": 1,
-                            "description": "Saw a turkey." 
-                        },
-                        {
-                            "name": "socialize",
-                            "start": "2021-05-01T17:30:00 +07:00",
-                            "end": "20121-05-01T18:30:00 +07:00",
-                            "duration": 1,
-                            "description": "Saw a turkey." 
-                        },
-                        {
-                            "name": "gaming",
-                            "start": "2021-05-01T19:00:00 +07:00",
-                            "end": "20121-05-01T22:00:00 +07:00",
-                            "duration": 3,
-                            "description": "Killed a turkey." 
-                        },
-                        {
-                            "name": "sleep",
-                            "start": "2021-05-01T23:00:00 +07:00",
-                            "end": "20121-05-01T24:00:00 +07:00",
-                            "duration": 1,
-                            "description": "Dreamed a turkey." 
-                        }
-                    ]
-                },
-                 {
-                    "date": "2021-05-02",
-                    "sleep": 1,
-                    "class": 0.75,
-                    "outdoors": 1,
-                    "exercise": 2,
-                    "events": [
-                        {
-                            "name": "class",
-                            "start": "2021-05-02T12:15:00 +07:00",
-                            "end": "2021-05-02T13:00:00 +07:00",
-                            "duration": 0.75,
-                            "description": "61A Lecture, I fell asleep."
-                        },
-                        {
-                            "name": "outdoors",
-                            "start": "2021-05-02T14:00:00 +07:00",
-                            "end": "2021-05-02T15:00:00 +07:00",
-                            "duration": 1,
-                            "description": "Nice sun."
-                        },
-                        {
-                            "name": "exercise",
-                            "start": "2021-05-02T07:00:00 +07:00",
-                            "end": "2021-05-02T09:00:00 +07:00",
-                            "duration": 2,
-                            "description": "Nice sun."
-                        },
-                        {
-                            "name": "sleep",
-                            "start": "2021-05-02T17:00:00 +07:00",
-                            "end": "20121-05-02T18:00:00 +07:00",
-                            "duration": 1,
-                            "description": "Can't sleep."
-                        },
-                    ]
-                },
-                {
-                    "date": "2021-05-03",
-                    "sleep": 0.5,
-                    "socialize": 0.25,
-                    "gaming": 1.75,
-                    "outdoors": 0.5,
-                    "events": [
-                        {
-                            "name": "socialize",
-                            "start": "2021-05-03T08:15:00 +07:00",
-                            "end": "2021-05-03T08:30:00 +07:00",
-                            "duration": 0.25,
-                            "description": "Good talk."
-                        },
-                        {
-                            "name": "gaming",
-                            "start": "2021-05-03T16:15:00 +07:00",
-                            "end": "2021-05-03T18:00:00 +07:00",
-                            "duration": 1.75,
-                            "description": "Good talk."
-                        },
-                        {
-                            "name": "outdoors",
-                            "start": "2021-05-03T19:15:00 +07:00",
-                            "end": "2021-05-03T19:45:00 +07:00",
-                            "duration": 0.5,
-                            "description": "Saw a cute cat."
-                        },
-                        {
-                            "name": "sleep",
-                            "start": "2021-05-03T20:00:00 +07:00",
-                            "end": "20121-05-03T20:30:00 +07:00",
-                            "duration": 0.5,
-                            "description": "Can't sleep."
-                        },
-                    ]
-                }
-            ]
+            {
+              "name": "exercise",
+              "start": "2021-04-19T07:00:00 +07:00",
+              "end": "2021-04-19T09:00:00 +07:00",
+              "duration": 2,
+              "description": "Nice sun."
+            },
+            {
+              "name": "sleep",
+              "start": "2021-04-19T17:00:00 +07:00",
+              "end": "20121-04-19T18:00:00 +07:00",
+              "duration": 1,
+              "description": "Can't sleep."
+            }
+          ]
+        },
+        {
+          "date": "2021-04-20",
+          "sleep": 0.5,
+          "socialize": 0.25,
+          "gaming": 1.75,
+          "outdoors": 0.5,
+          "events": [{
+              "name": "socialize",
+              "start": "2021-04-20T08:15:00 +07:00",
+              "end": "2021-04-20T08:30:00 +07:00",
+              "duration": 0.25,
+              "description": "Good talk."
+            },
+            {
+              "name": "gaming",
+              "start": "2021-04-20T16:15:00 +07:00",
+              "end": "2021-04-20T18:00:00 +07:00",
+              "duration": 1.75,
+              "description": "Good talk."
+            },
+            {
+              "name": "outdoors",
+              "start": "2021-04-20T19:15:00 +07:00",
+              "end": "2021-04-20T19:45:00 +07:00",
+              "duration": 0.5,
+              "description": "Saw a cute cat."
+            },
+            {
+              "name": "sleep",
+              "start": "2021-04-20T20:00:00 +07:00",
+              "end": "20121-04-20T20:30:00 +07:00",
+              "duration": 0.5,
+              "description": "Can't sleep."
+            }
+          ]
+        },
+        {
+          "date": "2021-04-21",
+          "sleep": 3,
+          "study": 0.25,
+          "events": [{
+              "name": "sleep",
+              "start": "2021-04-21T15:00:00 +07:00",
+              "end": "20121-04-21T18:00:00 +07:00",
+              "duration": 3,
+              "description": "Can't sleep."
+            },
+            {
+              "name": "study",
+              "start": "2021-04-21T08:00:00 +07:00",
+              "end": "20121-04-21T08:15:00 +07:00",
+              "duration": 0.25,
+              "description": "Can't sleep."
+            }
+          ]
+        },
+        {
+          "date": "2021-04-22",
+          "sleep": 4,
+          "eat": 1,
+          "events": [{
+              "name": "sleep",
+              "start": "2021-04-22T14:00:00 +07:00",
+              "end": "20121-04-22T18:00:00 +07:00",
+              "duration": 4,
+              "description": "Can't sleep."
+            },
+            {
+              "name": "eat",
+              "start": "2021-04-22T04:00:00 +07:00",
+              "end": "20121-04-22T04:30:00 +07:00",
+              "duration": 0.5,
+              "description": "Can't sleep."
+            },
+            {
+              "name": "eat",
+              "start": "2021-04-22T18:15:00 +07:00",
+              "end": "20121-04-22T18:45:00 +07:00",
+              "duration": 0.5,
+              "description": "Can't sleep."
+            }
+          ]
+        },
+        {
+          "date": "2021-04-23",
+          "sleep": 1,
+          "eat": 2,
+          "outdoors": 1,
+          "study": 3,
+          "socialize": 3,
+          "class": 1,
+          "exercise": 0.5,
+          "gaming": 3,
+          "travel_commute": 0.25,
+          "events": [{
+              "name": "eat",
+              "start": "2021-04-23T04:00:00 +07:00",
+              "end": "20121-04-23T05:00:00 +07:00",
+              "duration": 1,
+              "description": "Can't sleep."
+            },
+            {
+              "name": "study",
+              "start": "2021-04-23T06:00:00 +07:00",
+              "end": "20121-04-23T09:00:00 +07:00",
+              "duration": 3,
+              "description": "Can't sleep."
+            },
+            {
+              "name": "eat",
+              "start": "2021-04-23T11:25:00 +07:00",
+              "end": "20121-04-23T12:25:00 +07:00",
+              "duration": 1,
+              "description": "Can't sleep."
+            },
+            {
+              "name": "outdoors",
+              "start": "2021-04-23T10:00:00 +07:00",
+              "end": "20121-04-23T11:00:00 +07:00",
+              "duration": 1,
+              "description": "Saw a turkey."
+            },
+            {
+              "name": "socialize",
+              "start": "2021-04-23T13:00:00 +07:00",
+              "end": "20121-04-23T16:00:00 +07:00",
+              "duration": 3,
+              "description": "Saw a turkey."
+            },
+            {
+              "name": "travel_commute",
+              "start": "2021-04-23T16:00:00 +07:00",
+              "end": "20121-04-23T16:15:00 +07:00",
+              "duration": 0.25,
+              "description": "Saw a turkey."
+            },
+            {
+              "name": "class",
+              "start": "2021-04-23T16:15:00 +07:00",
+              "end": "20121-04-23T17:15:00 +07:00",
+              "duration": 1,
+              "description": "Saw a turkey."
+            },
+            {
+              "name": "exercise",
+              "start": "2021-04-23T17:30:00 +07:00",
+              "end": "20121-04-23T18:30:00 +07:00",
+              "duration": 1,
+              "description": "Saw a turkey."
+            },
+            {
+              "name": "gaming",
+              "start": "2021-04-23T19:00:00 +07:00",
+              "end": "20121-04-23T22:00:00 +07:00",
+              "duration": 3,
+              "description": "Killed a turkey."
+            },
+            {
+              "name": "sleep",
+              "start": "2021-04-23T23:00:00 +07:00",
+              "end": "20121-04-23T24:00:00 +07:00",
+              "duration": 1,
+              "description": "Dreamed a turkey."
+            }
+          ]
+        },
+        {
+          "date": "2021-04-24",
+          "sleep": 2,
+          "eat": 0.75,
+          "outdoors": 0.75,
+          "study": 4,
+          "socialize": 3,
+          "class": 1,
+          "exercise": 0.5,
+          "gaming": 3,
+          "travel_commute": 0.25,
+          "events": [{
+              "name": "eat",
+              "start": "2021-04-24T05:00:00 +07:00",
+              "end": "20121-04-24T05:45:00 +07:00",
+              "duration": 0.75,
+              "description": "Can't sleep."
+            },
+            {
+              "name": "study",
+              "start": "2021-04-24T06:00:00 +07:00",
+              "end": "20121-04-24T10:00:00 +07:00",
+              "duration": 4,
+              "description": "Can't sleep."
+            },
+            {
+              "name": "outdoors",
+              "start": "2021-04-24T10:15:00 +07:00",
+              "end": "20121-04-24T11:00:00 +07:00",
+              "duration": 0.75,
+              "description": "Saw a turkey."
+            },
+            {
+              "name": "socialize",
+              "start": "2021-04-24T13:00:00 +07:00",
+              "end": "20121-04-24T16:00:00 +07:00",
+              "duration": 3,
+              "description": "Saw a turkey."
+            },
+            {
+              "name": "travel_commute",
+              "start": "2021-04-24T16:00:00 +07:00",
+              "end": "20121-04-24T16:15:00 +07:00",
+              "duration": 0.25,
+              "description": "Saw a turkey."
+            },
+            {
+              "name": "class",
+              "start": "2021-04-24T16:15:00 +07:00",
+              "end": "20121-04-24T17:15:00 +07:00",
+              "duration": 1,
+              "description": "Saw a turkey."
+            },
+            {
+              "name": "exercise",
+              "start": "2021-04-24T17:30:00 +07:00",
+              "end": "20121-04-24T18:30:00 +07:00",
+              "duration": 1,
+              "description": "Saw a turkey."
+            },
+            {
+              "name": "gaming",
+              "start": "2021-04-24T19:00:00 +07:00",
+              "end": "20121-04-24T22:00:00 +07:00",
+              "duration": 3,
+              "description": "Killed a turkey."
+            },
+            {
+              "name": "sleep",
+              "start": "2021-04-24T22:00:00 +07:00",
+              "end": "20121-04-24T24:00:00 +07:00",
+              "duration": 2,
+              "description": "Dreamed a turkey."
+            }
+          ]
+        },
+        {
+          "date": "2021-04-25",
+          "sleep": 1,
+          "eat": 1.5,
+          "outdoors": 2,
+          "study": 1.5,
+          "socialize": 3,
+          "class": 1,
+          "exercise": 3,
+          "gaming": 3,
+          "travel_commute": 0.25,
+          "events": [{
+              "name": "eat",
+              "start": "2021-04-25T10:00:00 +07:00",
+              "end": "20121-04-25T10:45:00 +07:00",
+              "duration": 0.75,
+              "description": "Can't sleep."
+            },
+            {
+              "name": "study",
+              "start": "2021-04-25T03:00:00 +07:00",
+              "end": "20121-04-25T04:30:00 +07:00",
+              "duration": 1.5,
+              "description": "Can't sleep."
+            },
+            {
+              "name": "eat",
+              "start": "2021-04-25T18:25:00 +07:00",
+              "end": "20121-04-25T19:00:00 +07:00",
+              "duration": 0.75,
+              "description": "Can't sleep."
+            },
+            {
+              "name": "outdoors",
+              "start": "2021-04-25T04:00:00 +07:00",
+              "end": "20121-04-25T06:00:00 +07:00",
+              "duration": 2,
+              "description": "Saw a turkey."
+            },
+            {
+              "name": "exercise",
+              "start": "2021-04-25T13:00:00 +07:00",
+              "end": "20121-04-25T16:00:00 +07:00",
+              "duration": 3,
+              "description": "Saw a turkey."
+            },
+            {
+              "name": "travel_commute",
+              "start": "2021-04-25T16:00:00 +07:00",
+              "end": "20121-04-25T16:15:00 +07:00",
+              "duration": 0.25,
+              "description": "Saw a turkey."
+            },
+            {
+              "name": "class",
+              "start": "2021-04-25T16:15:00 +07:00",
+              "end": "20121-04-25T17:15:00 +07:00",
+              "duration": 1,
+              "description": "Saw a turkey."
+            },
+            {
+              "name": "socialize",
+              "start": "2021-04-25T17:30:00 +07:00",
+              "end": "20121-04-25T18:30:00 +07:00",
+              "duration": 1,
+              "description": "Saw a turkey."
+            },
+            {
+              "name": "gaming",
+              "start": "2021-04-25T19:00:00 +07:00",
+              "end": "20121-04-25T22:00:00 +07:00",
+              "duration": 3,
+              "description": "Killed a turkey."
+            },
+            {
+              "name": "sleep",
+              "start": "2021-04-25T23:00:00 +07:00",
+              "end": "20121-04-25T24:00:00 +07:00",
+              "duration": 1,
+              "description": "Dreamed a turkey."
+            }
+          ]
+        },
+        {
+          "date": "2021-04-26",
+          "sleep": 4,
+          "eat": 0.5,
+          "gaming": 10,
+          "events": [{
+              "name": "sleep",
+              "start": "2021-04-26T16:00:00 +07:00",
+              "end": "20121-04-26T20:00:00 +07:00",
+              "duration": 4,
+              "description": "Can't sleep."
+            },
+            {
+              "name": "eat",
+              "start": "2021-04-26T04:00:00 +07:00",
+              "end": "20121-04-26T04:30:00 +07:00",
+              "duration": 0.5,
+              "description": "Can't sleep."
+            },
+            {
+              "name": "gaming",
+              "start": "2021-04-26T05:00:00 +07:00",
+              "end": "20121-04-26T15:00:00 +07:00",
+              "duration": 10,
+              "description": "Can't sleep."
+            }
+          ]
+        },
+        {
+          "date": "2021-04-27",
+          "sleep": 1,
+          "eat": 1.5,
+          "outdoors": 2,
+          "study": 1.5,
+          "socialize": 3,
+          "class": 1,
+          "exercise": 3,
+          "gaming": 3,
+          "travel_commute": 0.25,
+          "events": [{
+              "name": "eat",
+              "start": "2021-04-27T10:00:00 +07:00",
+              "end": "20121-04-27T10:45:00 +07:00",
+              "duration": 0.75,
+              "description": "Can't sleep."
+            },
+            {
+              "name": "study",
+              "start": "2021-04-27T03:00:00 +07:00",
+              "end": "20121-04-27T04:30:00 +07:00",
+              "duration": 1.5,
+              "description": "Can't sleep."
+            },
+            {
+              "name": "eat",
+              "start": "2021-04-27T18:25:00 +07:00",
+              "end": "20121-04-27T19:00:00 +07:00",
+              "duration": 0.75,
+              "description": "Can't sleep."
+            },
+            {
+              "name": "outdoors",
+              "start": "2021-04-27T04:00:00 +07:00",
+              "end": "20121-04-27T06:00:00 +07:00",
+              "duration": 2,
+              "description": "Saw a turkey."
+            },
+            {
+              "name": "exercise",
+              "start": "2021-04-27T13:00:00 +07:00",
+              "end": "20121-04-27T16:00:00 +07:00",
+              "duration": 3,
+              "description": "Saw a turkey."
+            },
+            {
+              "name": "travel_commute",
+              "start": "2021-04-27T16:00:00 +07:00",
+              "end": "20121-04-27T16:15:00 +07:00",
+              "duration": 0.25,
+              "description": "Saw a turkey."
+            },
+            {
+              "name": "class",
+              "start": "2021-04-27T16:15:00 +07:00",
+              "end": "20121-04-27T17:15:00 +07:00",
+              "duration": 1,
+              "description": "Saw a turkey."
+            },
+            {
+              "name": "socialize",
+              "start": "2021-04-27T17:30:00 +07:00",
+              "end": "20121-04-27T18:30:00 +07:00",
+              "duration": 1,
+              "description": "Saw a turkey."
+            },
+            {
+              "name": "gaming",
+              "start": "2021-04-27T19:00:00 +07:00",
+              "end": "20121-04-27T22:00:00 +07:00",
+              "duration": 3,
+              "description": "Killed a turkey."
+            },
+            {
+              "name": "sleep",
+              "start": "2021-04-27T23:00:00 +07:00",
+              "end": "20121-04-27T24:00:00 +07:00",
+              "duration": 1,
+              "description": "Dreamed a turkey."
+            }
+          ]
+        },
+        {
+          "date": "2021-04-28",
+          "sleep": 1,
+          "eat": 1.5,
+          "outdoors": 2,
+          "study": 1.5,
+          "socialize": 3,
+          "class": 1,
+          "exercise": 3,
+          "gaming": 3,
+          "travel_commute": 0.25,
+          "events": [{
+              "name": "eat",
+              "start": "2021-04-28T10:00:00 +07:00",
+              "end": "20121-04-28T10:45:00 +07:00",
+              "duration": 0.75,
+              "description": "Can't sleep."
+            },
+            {
+              "name": "study",
+              "start": "8021-04-28T03:00:00 +07:00",
+              "end": "20121-04-28T04:30:00 +07:00",
+              "duration": 1.5,
+              "description": "Can't sleep."
+            },
+            {
+              "name": "eat",
+              "start": "2021-04-28T18:25:00 +07:00",
+              "end": "20121-04-28T19:00:00 +07:00",
+              "duration": 0.75,
+              "description": "Can't sleep."
+            },
+            {
+              "name": "outdoors",
+              "start": "2021-04-28T04:00:00 +07:00",
+              "end": "20121-04-28T06:00:00 +07:00",
+              "duration": 2,
+              "description": "Saw a turkey."
+            },
+            {
+              "name": "exercise",
+              "start": "2021-04-28T13:00:00 +07:00",
+              "end": "20121-04-28T16:00:00 +07:00",
+              "duration": 3,
+              "description": "Saw a turkey."
+            },
+            {
+              "name": "travel_commute",
+              "start": "2021-04-28T16:00:00 +07:00",
+              "end": "20121-04-28T16:15:00 +07:00",
+              "duration": 0.25,
+              "description": "Saw a turkey."
+            },
+            {
+              "name": "class",
+              "start": "2021-04-28T16:15:00 +07:00",
+              "end": "20121-04-28T17:15:00 +07:00",
+              "duration": 1,
+              "description": "Saw a turkey."
+            },
+            {
+              "name": "socialize",
+              "start": "2021-04-28T17:30:00 +07:00",
+              "end": "20121-04-28T18:30:00 +07:00",
+              "duration": 1,
+              "description": "Saw a turkey."
+            },
+            {
+              "name": "gaming",
+              "start": "2021-04-28T19:00:00 +07:00",
+              "end": "20121-04-28T22:00:00 +07:00",
+              "duration": 3,
+              "description": "Killed a turkey."
+            },
+            {
+              "name": "sleep",
+              "start": "2021-04-28T23:00:00 +07:00",
+              "end": "20121-04-28T24:00:00 +07:00",
+              "duration": 1,
+              "description": "Dreamed a turkey."
+            }
+          ]
+        },
+        {
+          "date": "2021-04-29",
+          "sleep": 1,
+          "class": 0.75,
+          "outdoors": 1,
+          "exercise": 2,
+          "events": [{
+              "name": "class",
+              "start": "2021-04-29T12:15:00 +07:00",
+              "end": "2021-04-29T13:00:00 +07:00",
+              "duration": 0.75,
+              "description": "61A Lecture, I fell asleep."
+            },
+            {
+              "name": "outdoors",
+              "start": "2021-04-29T14:00:00 +07:00",
+              "end": "2021-04-29T15:00:00 +07:00",
+              "duration": 1,
+              "description": "Nice sun."
+            },
+            {
+              "name": "exercise",
+              "start": "2021-04-29T07:00:00 +07:00",
+              "end": "2021-04-29T09:00:00 +07:00",
+              "duration": 2,
+              "description": "Nice sun."
+            },
+            {
+              "name": "sleep",
+              "start": "2021-04-29T17:00:00 +07:00",
+              "end": "20121-04-29T18:00:00 +07:00",
+              "duration": 1,
+              "description": "Can't sleep."
+            }
+          ]
+        },
+        {
+          "date": "2021-04-30",
+          "sleep": 4,
+          "eat": 0.5,
+          "gaming": 10,
+          "events": [{
+              "name": "sleep",
+              "start": "2021-04-30T16:00:00 +07:00",
+              "end": "20121-04-30T20:00:00 +07:00",
+              "duration": 4,
+              "description": "Can't sleep."
+            },
+            {
+              "name": "eat",
+              "start": "2021-04-30T04:00:00 +07:00",
+              "end": "20121-04306T04:30:00 +07:00",
+              "duration": 0.5,
+              "description": "Can't sleep."
+            },
+            {
+              "name": "gaming",
+              "start": "2021-04-30T05:00:00 +07:00",
+              "end": "20121-04-30T15:00:00 +07:00",
+              "duration": 10,
+              "description": "Can't sleep."
+            }
+          ]
+        },
+        {
+          "date": "2021-05-01",
+          "sleep": 1,
+          "eat": 1.5,
+          "outdoors": 2,
+          "study": 1.5,
+          "socialize": 3,
+          "class": 1,
+          "exercise": 3,
+          "gaming": 3,
+          "travel_commute": 0.25,
+          "events": [{
+              "name": "eat",
+              "start": "2021-05-01T10:00:00 +07:00",
+              "end": "20121-05-01T10:45:00 +07:00",
+              "duration": 0.75,
+              "description": "Can't sleep."
+            },
+            {
+              "name": "study",
+              "start": "2021-05-01T03:00:00 +07:00",
+              "end": "20121-05-01T04:30:00 +07:00",
+              "duration": 1.5,
+              "description": "Can't sleep."
+            },
+            {
+              "name": "eat",
+              "start": "2021-05-01T18:25:00 +07:00",
+              "end": "20121-05-01T19:00:00 +07:00",
+              "duration": 0.75,
+              "description": "Can't sleep."
+            },
+            {
+              "name": "outdoors",
+              "start": "2021-05-01T04:00:00 +07:00",
+              "end": "20121-05-01T06:00:00 +07:00",
+              "duration": 2,
+              "description": "Saw a turkey."
+            },
+            {
+              "name": "exercise",
+              "start": "2021-05-01T13:00:00 +07:00",
+              "end": "20121-05-01T16:00:00 +07:00",
+              "duration": 3,
+              "description": "Saw a turkey."
+            },
+            {
+              "name": "travel_commute",
+              "start": "2021-05-01T16:00:00 +07:00",
+              "end": "20121-05-01T16:15:00 +07:00",
+              "duration": 0.25,
+              "description": "Saw a turkey."
+            },
+            {
+              "name": "class",
+              "start": "2021-05-01T16:15:00 +07:00",
+              "end": "20121-05-01T17:15:00 +07:00",
+              "duration": 1,
+              "description": "Saw a turkey."
+            },
+            {
+              "name": "socialize",
+              "start": "2021-05-01T17:30:00 +07:00",
+              "end": "20121-05-01T18:30:00 +07:00",
+              "duration": 1,
+              "description": "Saw a turkey."
+            },
+            {
+              "name": "gaming",
+              "start": "2021-05-01T19:00:00 +07:00",
+              "end": "20121-05-01T22:00:00 +07:00",
+              "duration": 3,
+              "description": "Killed a turkey."
+            },
+            {
+              "name": "sleep",
+              "start": "2021-05-01T23:00:00 +07:00",
+              "end": "20121-05-01T24:00:00 +07:00",
+              "duration": 1,
+              "description": "Dreamed a turkey."
+            }
+          ]
+        },
+        {
+          "date": "2021-05-02",
+          "sleep": 1,
+          "class": 0.75,
+          "outdoors": 1,
+          "exercise": 2,
+          "events": [{
+              "name": "class",
+              "start": "2021-05-02T12:15:00 +07:00",
+              "end": "2021-05-02T13:00:00 +07:00",
+              "duration": 0.75,
+              "description": "61A Lecture, I fell asleep."
+            },
+            {
+              "name": "outdoors",
+              "start": "2021-05-02T14:00:00 +07:00",
+              "end": "2021-05-02T15:00:00 +07:00",
+              "duration": 1,
+              "description": "Nice sun."
+            },
+            {
+              "name": "exercise",
+              "start": "2021-05-02T07:00:00 +07:00",
+              "end": "2021-05-02T09:00:00 +07:00",
+              "duration": 2,
+              "description": "Nice sun."
+            },
+            {
+              "name": "sleep",
+              "start": "2021-05-02T17:00:00 +07:00",
+              "end": "20121-05-02T18:00:00 +07:00",
+              "duration": 1,
+              "description": "Can't sleep."
+            }
+          ]
+        },
+        {
+          "date": "2021-05-03",
+          "sleep": 0.5,
+          "socialize": 0.25,
+          "gaming": 1.75,
+          "outdoors": 0.5,
+          "events": [{
+              "name": "socialize",
+              "start": "2021-05-03T08:15:00 +07:00",
+              "end": "2021-05-03T08:30:00 +07:00",
+              "duration": 0.25,
+              "description": "Good talk."
+            },
+            {
+              "name": "gaming",
+              "start": "2021-05-03T16:15:00 +07:00",
+              "end": "2021-05-03T18:00:00 +07:00",
+              "duration": 1.75,
+              "description": "Good talk."
+            },
+            {
+              "name": "outdoors",
+              "start": "2021-05-03T19:15:00 +07:00",
+              "end": "2021-05-03T19:45:00 +07:00",
+              "duration": 0.5,
+              "description": "Saw a cute cat."
+            },
+            {
+              "name": "sleep",
+              "start": "2021-05-03T20:00:00 +07:00",
+              "end": "20121-05-03T20:30:00 +07:00",
+              "duration": 0.5,
+              "description": "Can't sleep."
+            }
+          ]
         }
-    ]
+      ]
+    },
+    {
+      "_id": "",
+      "username": "",
+      "password": "",
+      "info": {
+        "name": "",
+        "age": 0,
+        "profession": "",
+        "profile_picture": ""
+      },
+      "goals": {
+
+      },
+      "activities": [
+
+      ]
+    }
+  ]
 }
