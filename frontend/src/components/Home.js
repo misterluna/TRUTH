@@ -17,7 +17,7 @@ import MenuBar from "./MenuBar";
 import HomeBG from "./assets/home-background.svg";
 import BlueLine from "./assets/sidebar-blue-line.svg";
 
-import BackendHelper from "./BackendHelper";
+import BackendHelper from "../BackendHelper";
 
 console.log(BackendHelper.getUser("idk some user id"));
 console.log(BackendHelper.addActivity("put new activity here"));
