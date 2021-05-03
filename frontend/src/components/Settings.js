@@ -17,7 +17,7 @@ import {
   IconButton,
 } from "@chakra-ui/react";
 
-import Sidebar from "./Sidebar";
+import PageContainer from "./PageContainer";
 
 import HidePasswordIcon from "./assets/icon-placeholder.svg";
 import ShowPasswordIcon from "./assets/icon-placeholder-empty.svg";
@@ -29,13 +29,14 @@ import ShowPasswordIcon from "./assets/icon-placeholder-empty.svg";
 function Settings() {
   return (
     <>
-      <HStack>
+      <PageContainer currPage="Settings" pageContent={<SettingsContent />} />
+      {/* <HStack>
         <Sidebar currPage="Settings" />
         <Box bg="white" w="20vw"></Box>
         <Box bg="gray.100" flexGrow="1" px={16} py={12} minH="100vh">
           <SettingsContent />
         </Box>
-      </HStack>
+      </HStack> */}
     </>
   );
 }

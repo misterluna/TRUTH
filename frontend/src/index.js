@@ -12,6 +12,7 @@ import { Router } from "@reach/router";
 import Home from "./components/Home";
 import Dashboard from "./components/Dashboard";
 import Goals from "./components/Goals";
+import Compare from "./components/Compare";
 import Settings from "./components/Settings";
 
 ReactDOM.render(
@@ -21,6 +22,7 @@ ReactDOM.render(
         <Home path="/" />
         <Dashboard path="/dashboard" />
         <Goals path="/goals" />
+        <Compare path="/compare" />
         <Settings path="/settings" />
       </Router>
     </ChakraProvider>

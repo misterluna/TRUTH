@@ -1,15 +1,7 @@
 import React from "react";
-import {
-  Wrap,
-  WrapItem,
-  Box,
-  HStack,
-  Heading,
-  Text,
-  VStack,
-} from "@chakra-ui/react";
+import { Wrap, WrapItem, Box, Heading, Text, VStack } from "@chakra-ui/react";
 
-import Sidebar from "./Sidebar";
+import PageContainer from "./PageContainer";
 
 /*
     --- goals: a list of objects containing goal data 
@@ -42,15 +34,20 @@ const goals = [
 
 function Goals() {
   return (
-    <>
-      <HStack>
-        <Sidebar currPage="Goals" />
-        <Box bg="white" w="20vw"></Box>
-        <Box bg="gray.100" flexGrow="1" px={16} py={12} minH="100vh">
-          <GoalsContent goals={goals} />
-        </Box>
-      </HStack>
-    </>
+    <PageContainer
+      currPage="Goals"
+      pageContent={<GoalsContent goals={goals} />}
+    />
+
+    // <>
+    //   <HStack>
+    //     <Sidebar currPage="Goals" />
+    //     <Box bg="white" w="20vw"></Box>
+    //     <Box bg="gray.100" flexGrow="1" px={16} py={12} minH="100vh">
+    //       <GoalsContent goals={goals} />
+    //     </Box>
+    //   </HStack>
+    // </>
   );
 }
 
@@ -66,7 +63,7 @@ function GoalsContent({ goals }) {
           Keep in mind that everyone is different – be realistic and stay
           patient!
         </Text>
-        <Wrap py={8} px={2} spacing={8}>
+        <Wrap justify="center" py={8} px={2} spacing={8}>
           {goals.map((data) => {
             return (
               <WrapItem>

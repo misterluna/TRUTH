@@ -10,23 +10,24 @@ import {
   ListItem,
 } from "@chakra-ui/react";
 
-import Sidebar from "./Sidebar";
+import PageContainer from "./PageContainer";
 
-function Dashboard({}) {
+function Dashboard() {
   return (
     <>
-      <HStack>
+      <PageContainer currPage="Dashboard" pageContent={<DashContent />} />
+      {/* <HStack>
         <Sidebar currPage="Dashboard" />
         <Box bg="white" w="20vw"></Box>
         <Box bg="gray.100" flexGrow="1" px={16} py={12}>
           <DashContent />
         </Box>
-      </HStack>
+      </HStack> */}
     </>
   );
 }
 
-function DashContent({}) {
+function DashContent() {
   return (
     <VStack alignItems="flex-start" spacing={8}>
       <Heading fontWeight="light" size="xl">

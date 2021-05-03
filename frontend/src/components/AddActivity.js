@@ -10,24 +10,15 @@ import {
   ModalOverlay,
   ModalContent,
   ModalHeader,
-  ModalFooter,
-  ModalBody,
-  ModalCloseButton,
-  FormControl,
-  FormLabel,
-  FormErrorMessage,
-  FormHelperText,
   Select,
   Input,
   Textarea,
-  NumberInput,
-  NumberInputField,
-  NumberInputStepper,
-  NumberIncrementStepper,
-  NumberDecrementStepper,
+  IconButton,
+  Icon,
 } from "@chakra-ui/react";
 
 import TimeField from "react-simple-timefield";
+import { AiFillPlusCircle } from "react-icons/ai";
 
 /*
   --- Store a list of activities, shown as options
@@ -48,20 +39,39 @@ let activityList = defaultActivityList;
 */
 function handleSubmit() {}
 
-function AddActivity() {
+function AddActivity({ screenSize }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  console.log("------- " + screenSize);
+
+  function buttonSizeHandler() {
+    if (screenSize === "full") {
+      return (
+        <Button
+          colorScheme="blue"
+          backgroundColor="blue.900"
+          size="lg"
+          borderRadius="100"
+          onClick={onOpen}
+        >
+          + Add Activity
+        </Button>
+      );
+    } else if (screenSize === "tablet") {
+      return (
+        <IconButton
+          colorScheme="blue"
+          icon={<Icon as={AiFillPlusCircle} color="blue.900" boxSize="2.5em" />}
+          variant="ghost"
+          size="lg"
+          onClick={onOpen}
+        />
+      );
+    }
+  }
 
   return (
     <>
-      <Button
-        colorScheme="blue"
-        backgroundColor="blue.900"
-        size="lg"
-        borderRadius="100"
-        onClick={onOpen}
-      >
-        + Add Activity
-      </Button>
+      {buttonSizeHandler()}
 
       <Modal isOpen={isOpen} onClose={onClose} size="xl">
         <ModalOverlay>
