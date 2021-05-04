@@ -1,35 +1,104 @@
-import mongoose from 'mongoose'
+import mongoose from 'mongoose';
 
-const userSchema = mongoose.Schema({
-    firstName: {
-        type: String,
-    },
-    secondName:{
-        type: String,
-    },
-    userName: {
-        type: String,
-        required: true,
-        unique:true
-    },
-    email: {
-        type: String,
-        required: true,
-        unique:true
-    },
-    password: {
+const eventSchema = mongoose.Schema({
+    name: {
         type: String,
         required: true
     },
-    isAdmin: {
-        type: Boolean,
-        required: true,
-        defualt: false
+    start: {
+        type: String,
+        required: true
     },
-}, {
-    timestamps: true
-})
+    end: {
+        type: String,
+        required: true
+    },
+    duration: {
+        type: Number,
+        required: true
+    },
+    description: {
+        type: String,
+        required: false
+    }
+});
 
-const User = mongoose.model('User', userSchema)
+const activitySchema = mongoose.Schema({
+    date: {
+        type: String,
+        required: true
+    },
+    sleep: {
+        type: String,
+        required: false
+    },
+    class: {
+        type: String,
+        required: false
+    },
+    outdoors: {
+        type: Number,
+        required: false
+    },
+    exercise: {
+        type: Number,
+        required: false
+    },
+    eat: {
+        type: Number,
+        required: false
+    },
+    study: {
+        type: Number,
+        required: false
+    },
+    socialize: {
+        type: Number,
+        required: false
+    },
+    gaming: {
+        type: Number,
+        required: false
+    },
+    travel_commute: {
+        type: Number,
+        required: false
+    },
+    other: {
+        type: Number,
+        required: false
+    },
+    events: [eventSchema]
+});
 
-export default User
+const userSchema = mongoose.Schema({
+    _id: {
+        type: mongoose.Schema.ObjectId,
+        required: true,
+        unique:true
+    },
+    username: {
+        type: String,
+        required: true,
+        unique:true
+    },
+    password:{
+        type: String,
+        required: true,
+    },
+    info: {
+        type: Object,
+        required: true,
+        unique:true
+    },
+    goals: {
+        type: Object,
+        required: true,
+        unique:true
+    },
+    activities: [activitySchema]
+});
+
+const User = mongoose.model('User', userSchema);
+
+export default User;
