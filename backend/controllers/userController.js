@@ -75,3 +75,19 @@ export const createNewEvent = asyncHandler(async(req, res) => {
     }
     console.log("creating new event!", req.params)
 })
+
+//createNewGoal function to create a new goal for a specific user
+export const createNewGoal  = asyncHandler(async(req, res) => {
+    const user = await User.findById(req.params.id)
+
+    //if user id match param id send user else throw error
+    if(user){
+        res.status(501).json({message: "Adding goals not implemented"})
+        res.status(501)
+        throw new Error('Adding goals not implemented')
+    }else{
+        res.status(404).json({message: "User not found"})
+        res.status(404)
+        throw new Error('User not found')
+    }
+})

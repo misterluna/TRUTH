@@ -16,7 +16,7 @@
       "socialize": 7,
       "class": 12,
       "exercise": 1,
-      "gaming": 9,
+      "leisure": 9,
       "travel_commute": 6
     },
     "activities": [{
@@ -63,7 +63,7 @@
         "date": "2021-04-20",
         "sleep": 0.5,
         "socialize": 0.25,
-        "gaming": 1.75,
+        "leisure": 1.75,
         "outdoors": 0.5,
         "events": [{
 
@@ -75,7 +75,7 @@
           },
           {
 
-            "name": "gaming",
+            "name": "leisure",
             "start": "2021-04-20T16:15:00 +07:00",
             "end": "2021-04-20T18:00:00 +07:00",
             "duration": 1.75,
@@ -160,7 +160,7 @@
         "socialize": 3,
         "class": 1,
         "exercise": 0.5,
-        "gaming": 3,
+        "leisure": 3,
         "travel_commute": 0.25,
         "events": [{
 
@@ -228,7 +228,7 @@
           },
           {
 
-            "name": "gaming",
+            "name": "leisure",
             "start": "2021-04-23T19:00:00 +07:00",
             "end": "20121-04-23T22:00:00 +07:00",
             "duration": 3,
@@ -253,7 +253,7 @@
         "socialize": 3,
         "class": 1,
         "exercise": 0.5,
-        "gaming": 3,
+        "leisure": 3,
         "travel_commute": 0.25,
         "events": [{
 
@@ -313,7 +313,7 @@
           },
           {
 
-            "name": "gaming",
+            "name": "leisure",
             "start": "2021-04-24T19:00:00 +07:00",
             "end": "20121-04-24T22:00:00 +07:00",
             "duration": 3,
@@ -338,7 +338,7 @@
         "socialize": 3,
         "class": 1,
         "exercise": 3,
-        "gaming": 3,
+        "leisure": 3,
         "travel_commute": 0.25,
         "events": [{
 
@@ -406,7 +406,7 @@
           },
           {
 
-            "name": "gaming",
+            "name": "leisure",
             "start": "2021-04-25T19:00:00 +07:00",
             "end": "20121-04-25T22:00:00 +07:00",
             "duration": 3,
@@ -426,7 +426,7 @@
         "date": "2021-04-26",
         "sleep": 4,
         "eat": 0.5,
-        "gaming": 10,
+        "leisure": 10,
         "events": [{
 
             "name": "sleep",
@@ -445,7 +445,7 @@
           },
           {
 
-            "name": "gaming",
+            "name": "leisure",
             "start": "2021-04-26T05:00:00 +07:00",
             "end": "20121-04-26T15:00:00 +07:00",
             "duration": 10,
@@ -462,7 +462,7 @@
         "socialize": 3,
         "class": 1,
         "exercise": 3,
-        "gaming": 3,
+        "leisure": 3,
         "travel_commute": 0.25,
         "events": [{
 
@@ -530,7 +530,7 @@
           },
           {
 
-            "name": "gaming",
+            "name": "leisure",
             "start": "2021-04-27T19:00:00 +07:00",
             "end": "20121-04-27T22:00:00 +07:00",
             "duration": 3,
@@ -555,7 +555,7 @@
         "socialize": 3,
         "class": 1,
         "exercise": 3,
-        "gaming": 3,
+        "leisure": 3,
         "travel_commute": 0.25,
         "events": [{
 
@@ -623,7 +623,7 @@
           },
           {
 
-            "name": "gaming",
+            "name": "leisure",
             "start": "2021-04-28T19:00:00 +07:00",
             "end": "20121-04-28T22:00:00 +07:00",
             "duration": 3,
@@ -683,7 +683,7 @@
         "date": "2021-04-30",
         "sleep": 4,
         "eat": 0.5,
-        "gaming": 10,
+        "leisure": 10,
         "events": [{
 
             "name": "sleep",
@@ -702,7 +702,7 @@
           },
           {
 
-            "name": "gaming",
+            "name": "leisure",
             "start": "2021-04-30T05:00:00 +07:00",
             "end": "20121-04-30T15:00:00 +07:00",
             "duration": 10,
@@ -719,7 +719,7 @@
         "socialize": 3,
         "class": 1,
         "exercise": 3,
-        "gaming": 3,
+        "leisure": 3,
         "travel_commute": 0.25,
         "events": [{
 
@@ -787,7 +787,7 @@
           },
           {
 
-            "name": "gaming",
+            "name": "leisure",
             "start": "2021-05-01T19:00:00 +07:00",
             "end": "20121-05-01T22:00:00 +07:00",
             "duration": 3,
@@ -847,7 +847,7 @@
         "date": "2021-05-03",
         "sleep": 0.5,
         "socialize": 0.25,
-        "gaming": 1.75,
+        "leisure": 1.75,
         "outdoors": 0.5,
         "events": [{
 
@@ -859,7 +859,7 @@
           },
           {
 
-            "name": "gaming",
+            "name": "leisure",
             "start": "2021-05-03T16:15:00 +07:00",
             "end": "2021-05-03T18:00:00 +07:00",
             "duration": 1.75,
