@@ -1,4 +1,6 @@
-class BackendHelper {
+import axios from "axios";
+
+class Utils {
 
   // USER AUTHENTICATION
 
@@ -17,14 +19,17 @@ class BackendHelper {
   // USER INFORMATION
   
   /**
-   * Retrieve userId's information for the given category.
+   * Retrieve all of userId's information for the given category.
    * @param  {String} userId    The user's unique id.
-   * @param  {String} category  The category of data we're requesting (e.g. Age)
-   * @return {String}           The requested value for that category (e.g. 19)
+   * @return {Promise}           The requested value for that category (e.g. 19)
    */
-   static getUserInfo(userId, category) {
-    // TODO
-    return;
+   static getAllUserInfo(userId) {
+    const getData = async () => {
+      const res = await axios.get("api/users/" + userId + "/");
+      return res.data;
+    }
+    const promise = getData();
+    return promise;
   }
 
   /**
@@ -168,4 +173,4 @@ class BackendHelper {
 
 }
 
-export default BackendHelper;
+export default Utils;

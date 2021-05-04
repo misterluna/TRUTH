@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Box,
   Image,
@@ -17,12 +17,20 @@ import MenuBar from "./MenuBar";
 import HomeBG from "./assets/home-background.svg";
 import BlueLine from "./assets/sidebar-blue-line.svg";
 
-import BackendHelper from "../BackendHelper";
+import Utils from "../Utils";
 
 const loremThree =
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet quam cras lacus nullam amet. Egestas varius accumsan sit nulla turpis turpis sem elit.";
 
 function Home() {
+  const [activeUser, setActiveUser] = useState([]);
+  useEffect(() => {
+    const getAsyncInfo = async () => {
+      const res = await Utils.getAllUserInfo("609050bcb7999a1ced1210f9");
+      setActiveUser(res);
+    }
+    getAsyncInfo();
+  }, []);
   return (
     <>
       <MenuBar />
@@ -30,6 +38,7 @@ function Home() {
       <Center pt="130px" pb="200px">
         <HomeContent />
       </Center>
+      <h1>Oski: {activeUser.username}</h1>
     </>
   );
 }
