@@ -64,8 +64,8 @@ class Utils {
    * @return {Number}           Activity in hours.
    */
   static getActivityTotal(user, category, date) {
-    if (user === undefined) {
-      return null;
+    if (user === undefined || user.activities === undefined) {
+      return "User was undefined when getActivityTotal was called";
     }
     const days = user.activities;
     for (let i = 0; i < days.length; i++) {
@@ -79,7 +79,7 @@ class Utils {
         }
       }
     }
-    return null;
+    return "Date " + date + " was not found in user' activity";
   }
 
   /**

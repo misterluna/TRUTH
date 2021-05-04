@@ -23,6 +23,7 @@ const loremThree =
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet quam cras lacus nullam amet. Egestas varius accumsan sit nulla turpis turpis sem elit.";
 
 function Home() {
+  // Retrieve the user
   const [activeUser, setActiveUser] = useState([]);
   useEffect(() => {
     const getAsyncInfo = async () => {
@@ -32,7 +33,9 @@ function Home() {
     getAsyncInfo();
   }, []);
 
-  console.log("Active User: ", activeUser);
+
+  // 
+
   return (
     <>
       <MenuBar />
@@ -40,7 +43,8 @@ function Home() {
       <Center pt="130px" pb="200px">
         <HomeContent />
       </Center>
-      <h1>Oski's gaming activity on 2021-04-20: {Utils.getActivityTotal(activeUser, "gaming", "2021-04-20")}</h1>
+      <h1>Oski's gaming activity on 2021-04-20: 
+        {Utils.getActivityTotal(activeUser, "gaming", "2021-04-20")}</h1>
     </>
   );
 }
