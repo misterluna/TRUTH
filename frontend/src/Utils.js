@@ -13,7 +13,7 @@ class Utils {
    */
   static login(username, password) {
     // TODO
-    return "609050bcb7999a1ced1210f9";
+    return "6091ba9a0ab9a112b7c6fa3a";
   }
 
   // USER INFORMATION
@@ -35,7 +35,7 @@ class Utils {
   /**
    * Returns user.info[category] if object user is defined, null if it is not.
    * Example: getUserInfo(activeUser, "name") === "Oski"
-   * @param  {Object} user
+   * @param  {Object} user      The entire user JSON object.
    * @param  {String} category  The requested category
    * @return {any}              The requested value for that category (e.g. 19)
    */
@@ -51,7 +51,7 @@ class Utils {
   /**
    * Retrieve the user's activity total for that category on that day. If an 
    * activity object does not exist for that date (because the user did not
-   * record any activity that day), return NULL (not 0!). If there is activity
+   * record any activity that day), return 0. If there is activity
    * that day but just no activity for that category, return 0.
    * 
    * If the user object is undefined (because the promise has not been fulfilled),
@@ -65,33 +65,64 @@ class Utils {
    */
   static getActivityTotal(user, category, date) {
     if (user === undefined || user.activities === undefined) {
-      return "User was undefined when getActivityTotal was called";
+      console.log("User was undefined when getActivityTotal was called");
+      return null;
     }
     const days = user.activities;
     for (let i = 0; i < days.length; i++) {
       const day = days[i];
-      if (day.date === date) {
+      if (day.date === date.substring(0, 10)) {
         if (category in day) {
           return day[category];
         }
         else {
+          // no activity for that category on that day
           return 0;
         }
       }
     }
-    return "Date " + date + " was not found in user' activity";
+    //no activity for that day
+    return 0;
   }
-
-  /**
-   * Retrieve all of the user's events for that day. Used to make the dashboard
-   * timeline.
-   * @param  {String} date      The date.
-   * @return {Array}            An array of event objects.
-   */
-   static getAllEvents(userId, date) {
-    // TODO
-    return;
-  }
+    /**
+    * Retrieve all of the user's events for that day. Used to make the dashboard
+    * timeline.
+    * 
+    * If the user object does not have an activities object for that day,
+    * or if there are no events in that day's activities (for whatever reason),
+    * return an empty events array.
+    * 
+    * If the user object is undefined (because the promise has not been fulfilled),
+    * return undefined.
+    * @param  {String} user      The entire user JSON object.
+    * @param  {String} date      The date, in standard format.
+    * @return {Array}            An array of event objects.
+    */
+     static getAllEvents(user, date) {
+      // if promise unfulfilled
+      if (user === undefined || user.activities === undefined) {
+        console.log("User was undefined when getActivityTotal was called");
+        return undefined;
+      }
+      if (user.activities === null || user.activities.length === 0) {
+        return [];
+      }
+      const days = user.activities;
+      for (let i = 0; i < days.length; i++) {
+        const day = days[i];
+        if (day.date === date.substring(0, 10)) {
+          if (day.events.length === 0) {
+            // no events in that activity object
+            return [];
+          }
+          return day.events;
+ 
+        }
+      }
+      // no activity obejct for that day
+      return [];
+    }
+ 
 
   /**
    * Add a new event to the user's activity for that day. If this is the first
@@ -132,6 +163,8 @@ class Utils {
       const res = await axios.post(url, event);
       return res.data;
     }
+    // return the promise, which will contain the HTTP status code.
+    // 200 = OK, 409 = Conflict (likely the request was sent more than once)
     const promise = postData();
     return promise;
   }
