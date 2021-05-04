@@ -20,17 +20,25 @@ const loremThree =
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet quam cras lacus nullam amet. Egestas varius accumsan sit nulla turpis turpis sem elit.";
 
 function Home() {
-  // Retrieve the user
+  // Create the activeUser state hook for calling Utils.get methods.
+  // Only use activeUser for get methods. When calling a set method in Utils, 
+  // use the userId only and increment update after. This is to prevent infinite loops.
+  const USER_ID = Utils.login();
+  let update = 0;
+
   const [activeUser, setActiveUser] = useState([]);
   useEffect(() => {
     const getAsyncInfo = async () => {
-      const res = await Utils.getUser("609050bcb7999a1ced1210f9");
+      const res = await Utils.getUser(USER_ID);
       setActiveUser(res);
     }
     getAsyncInfo();
-  }, []);
+  }, [USER_ID, update]);
 
-  Utils.addEvent("609050bcb7999a1ced1210f9", "class", "2021-05-04T14:15:00 +07:00", "2021-05-04T15:15:00 +07:00", "description");
+  // Add an event then increment update to trigger React to fetch data again.
+  Utils.addEvent(USER_ID, "class", "2021-05-04T14:15:00 +07:00", "2021-05-04T15:15:00 +07:00", "description");
+  update++;
+
   return (
     <>
       <MenuBar />

@@ -13,7 +13,7 @@ class Utils {
    */
   static login(username, password) {
     // TODO
-    return;
+    return "609050bcb7999a1ced1210f9";
   }
 
   // USER INFORMATION
@@ -103,7 +103,7 @@ class Utils {
    * description, all others are required.
    * 
    * Be sure to check the arguments: we don't know what the user put in!
-   * @param  {String} userId  
+   * @param  {String} userId        The user's unique id.
    * @param  {String} name          Also known as the category.
    * @param  {String} start         When the event started.
    * @param  {String} end           When the event ended.
