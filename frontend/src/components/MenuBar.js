@@ -1,19 +1,25 @@
 import React from "react";
 import { Link as ReachLink } from "@reach/router";
-import { HStack, Button, Image, Link } from "@chakra-ui/react";
+import { HStack, Button, Image, Link, VStack } from "@chakra-ui/react";
 
 import LargeLogo from "./assets/logo-full-large.svg";
 
 function MenuBar() {
   return (
+    <VStack w="100vw" h="auto" position="fixed" left="0" top="0">
+      <MenuBarContent />
+    </VStack>
+  );
+}
+
+function MenuBarContent() {
+  return (
     <HStack
       w="100vw"
+      maxW="1440px"
       px={8}
       py={4}
       justifyContent="space-between"
-      position="fixed"
-      left="0"
-      top="0"
     >
       <Image src={LargeLogo} />
       <HStack spacing={12}>

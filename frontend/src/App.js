@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 import Dashboard from "./components/Dashboard";
-import Home from "./components/Home";
 
 const App = () => {
   const [users, setUsers] = useState([]);

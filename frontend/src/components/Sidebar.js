@@ -213,7 +213,7 @@ function SidebarLink({ text, iconSrc, destination, lineOn, iconOnly }) {
           {text}
         </Text>
         {lineOn ? (
-          <Box bg="blue.300" borderRadius="20" h="2px" w="6vw" />
+          <Box bg="blue.300" borderRadius="20" h="2px" w="6vw" maxW="100px" />
         ) : (
           <></>
         )}
