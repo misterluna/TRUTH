@@ -14,12 +14,8 @@ import {
 } from "@chakra-ui/react";
 import MenuBar from "./MenuBar";
 import HomeBG from "./assets/home-background.svg";
-<<<<<<< HEAD
 import HomeBGTablet from "./assets/home-background-tablet.svg";
 
-=======
-import BlueLine from "./assets/sidebar-blue-line.svg";
->>>>>>> 9d37bca736ee53ca0eac03300c7b324eadc8ea68
 import Utils from "../Utils";
 
 const loremThree =
@@ -27,7 +23,7 @@ const loremThree =
 
 function Home() {
   // Create the activeUser state hook for calling Utils.get methods.
-  // Only use activeUser for get methods. When calling a set method in Utils, 
+  // Only use activeUser for get methods. When calling a set method in Utils,
   // use the userId only and increment update after. This is to prevent infinite loops.
   const USER_ID = Utils.login();
   let update = 0;
@@ -39,8 +35,7 @@ function Home() {
       setActiveUser(res);
     };
     getAsyncInfo();
-<<<<<<< HEAD
-  }, []);
+  }, [USER_ID, update]);
 
   Utils.addEvent(
     "609050bcb7999a1ced1210f9",
@@ -51,13 +46,15 @@ function Home() {
   );
 
   const [isTablet] = useMediaQuery("(max-width: 1200px");
-=======
-  }, [USER_ID, update]);
-
   // Add an event then increment update to trigger React to fetch data again.
-  Utils.addEvent(USER_ID, "class", "2021-05-04T14:15:00 +07:00", "2021-05-04T15:15:00 +07:00", "description");
+  Utils.addEvent(
+    USER_ID,
+    "class",
+    "2021-05-04T14:15:00 +07:00",
+    "2021-05-04T15:15:00 +07:00",
+    "description"
+  );
   update++;
->>>>>>> 9d37bca736ee53ca0eac03300c7b324eadc8ea68
 
   return (
     <>
