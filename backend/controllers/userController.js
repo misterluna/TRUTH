@@ -21,7 +21,7 @@ export const getUserById  = asyncHandler(async(req, res) => {
     }
 })
 
-//createNewEvent function to add an event to user by id
+//createNewEvent function to add an event to a specific user
 export const createNewEvent = asyncHandler(async(req, res) => {
     const user = await User.findById(req.params.id)
     //if user id match param id send user else throw error

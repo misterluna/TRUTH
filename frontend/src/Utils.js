@@ -128,7 +128,7 @@ class Utils {
     const event = { "name": name, "start": start, "end": end, "duration": duration, "description": description}
     
     const postData = async () => {
-      const url = "api/users/create/" + userId + "/";
+      const url = "api/users/events/" + userId + "/";
       const res = await axios.post(url, event);
       return res.data;
     }
