@@ -37,11 +37,24 @@ function Compare() {
   update++;
 
   // GET ALL EVENTS
-  console.log("List of Events: ",
-    Utils.getAllEvents(
-      activeUser,
-      Utils.formatDate(2021, 5, 3, 0, 0)
-    ));
+
+  let events = Utils.getAllEvents(
+    activeUser,
+    Utils.formatDate(2021, 5, 3, 0, 0)
+  );
+  console.log("List of Events: ", events);
+  if (events !== undefined && events.length > 0) {
+    for (const e in events){
+      const category = e.category;
+      const start = e.start;
+      const end = e.end;
+      const duration = e.duration;
+      const description  = e.description;
+  
+      console.log("On " + start + ", Oski started " + category);
+    }
+  }
+  
   return <PageContainer page="Compare" pageContent={<CompareContent />} />;
 }
 
