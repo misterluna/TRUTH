@@ -19,11 +19,11 @@ class Utils {
   // USER INFORMATION
   
   /**
-   * Retrieve all of userId's information for the given category.
+   * Retrieve all of userId's information.
    * @param  {String} userId    The user's unique id.
    * @return {Promise}           The requested value for that category (e.g. 19)
    */
-   static getAllUserInfo(userId) {
+   static getUser(userId) {
     const getData = async () => {
       const res = await axios.get("api/users/" + userId + "/");
       return res.data;
@@ -33,14 +33,17 @@ class Utils {
   }
 
   /**
-   * Set userId's information in the database to be the given value for the
-   * given category.
-   * @param  {String} userId The user's unique id.
-   * @return {Number}        0 on success, -1 on failure. 
+   * Returns user.info[category] if object user is defined, null if it is not.
+   * Example: getUserInfo(activeUser, "name") === "Oski"
+   * @param  {Object} user      The user's unique id.
+   * @param  {String} category  The requested category
+   * @return {any}              The requested value for that category (e.g. 19)
    */
-   static setUserInfo(userId, category, value) {
-    // TODO
-    return;
+   static getUserInfo(user, category) {
+    if (user === undefined) {
+      return null;
+    }
+    return user.info[category];
   }
 
   // EVENTS & ACTIVITIES
@@ -50,14 +53,33 @@ class Utils {
    * activity object does not exist for that date (because the user did not
    * record any activity that day), return NULL (not 0!). If there is activity
    * that day but just no activity for that category, return 0.
+   * 
+   * If the user object is undefined (because the promise has not been fulfilled),
+   * return null.
+   * 
+   * Example: getActivityTotal(activeUser, "gaming", "2021-04-20") === 1.75
    * @param  {String} userId    The user's unique id.
    * @param  {String} category  The type of activity.
    * @param  {String} date      The date for the requested totals.
    * @return {Number}           Activity in hours.
    */
-  static getActivityTotal(userId, category, date) {
-    // TODO
-    return;
+  static getActivityTotal(user, category, date) {
+    if (user === undefined) {
+      return null;
+    }
+    const days = user.activities;
+    for (let i = 0; i < days.length; i++) {
+      const day = days[i];
+      if (day.date === date) {
+        if (category in day) {
+          return day[category];
+        }
+        else {
+          return 0;
+        }
+      }
+    }
+    return null;
   }
 
   /**

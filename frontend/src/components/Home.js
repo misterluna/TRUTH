@@ -26,11 +26,13 @@ function Home() {
   const [activeUser, setActiveUser] = useState([]);
   useEffect(() => {
     const getAsyncInfo = async () => {
-      const res = await Utils.getAllUserInfo("609050bcb7999a1ced1210f9");
+      const res = await Utils.getUser("609050bcb7999a1ced1210f9");
       setActiveUser(res);
     }
     getAsyncInfo();
   }, []);
+
+  console.log("Active User: ", activeUser);
   return (
     <>
       <MenuBar />
@@ -38,7 +40,7 @@ function Home() {
       <Center pt="130px" pb="200px">
         <HomeContent />
       </Center>
-      <h1>Oski: {activeUser.username}</h1>
+      <h1>Oski's gaming activity on 2021-04-20: {Utils.getActivityTotal(activeUser, "gaming", "2021-04-20")}</h1>
     </>
   );
 }
