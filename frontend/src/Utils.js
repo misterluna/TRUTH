@@ -115,6 +115,7 @@ class Utils {
             // no events in that activity object
             return [];
           }
+          console.log("dayevents", day.events)
           return day.events;
  
         }

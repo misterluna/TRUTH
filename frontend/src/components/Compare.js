@@ -13,8 +13,9 @@ function Compare() {
   const [activeUser, setActiveUser] = useState([]);
   useEffect(() => {
     const getAsyncInfo = async () => {
-      const res = await Utils.getUser(USER_ID);
-      setActiveUser(res);
+      Utils.getUser(USER_ID).then((res) => {
+        setActiveUser(res); 
+      });
     };
     getAsyncInfo();
   }, [USER_ID, update]);
@@ -33,27 +34,25 @@ function Compare() {
     "2021-05-04T14:15:00 +07:00",
     "2021-05-04T15:15:00 +07:00",
     "description"
-  );
+  )
   update++;
-
+  
   // GET ALL EVENTS
 
   let events = Utils.getAllEvents(
     activeUser,
     Utils.formatDate(2021, 5, 3, 0, 0)
   );
-  console.log("List of Events: ", events);
+
+  // Process events when activeUser promise has resolved
   if (events !== undefined && events.length > 0) {
-    for (const e in events){
-      const category = e.category;
-      const start = e.start;
-      const end = e.end;
-      const duration = e.duration;
-      const description  = e.description;
-  
-      console.log("On " + start + ", Oski started " + category);
+    console.log("events.length", events.length);
+    for (let i = 0; i < events.length; i++) {
+      const e = events[i];
+      console.log("On " + e.start + ", Oski started " + e.name);
     }
   }
+
   
   return <PageContainer page="Compare" pageContent={<CompareContent />} />;
 }
