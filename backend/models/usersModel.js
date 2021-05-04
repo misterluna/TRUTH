@@ -7,7 +7,8 @@ const eventSchema = mongoose.Schema({
     },
     start: {
         type: String,
-        required: true
+        required: true,
+        unique:true
     },
     end: {
         type: String,
@@ -29,11 +30,11 @@ const activitySchema = mongoose.Schema({
         required: true
     },
     sleep: {
-        type: String,
+        type: Number,
         required: false
     },
     class: {
-        type: String,
+        type: Number,
         required: false
     },
     outdoors: {
@@ -72,11 +73,6 @@ const activitySchema = mongoose.Schema({
 });
 
 const userSchema = mongoose.Schema({
-    _id: {
-        type: mongoose.Schema.ObjectId,
-        required: true,
-        unique:true
-    },
     username: {
         type: String,
         required: true,

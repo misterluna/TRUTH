@@ -9,6 +9,7 @@ router.route('/').get(getUsers)
 // express router method to create route for getting users by id
 router.route('/:id').get(getUserById)
 
-router.route('/create/:id').post(createNewEvent)
+// express router method to create route for addingUserActivity
+router.route('/events/:id').post(createNewEvent)
 
 export default router
