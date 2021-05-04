@@ -111,8 +111,16 @@ class Utils {
    * @return {Number}               0 on success, -1 on failure. 
    */
    static addEvent(userId, name, start, end, description) {
-    // TODO
-    return;
+    const event = { "name": name, "start": start, "end": end, "description": description}
+    
+    const postData = async () => {
+      const url = "api/users/create/" + userId + "/";
+      const res = await axios.post(url, event);
+      return res.data;
+    }
+    const promise = postData();
+    console.log("post request promise", promise);
+    return promise;
   }
 
   /**

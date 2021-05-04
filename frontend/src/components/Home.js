@@ -34,7 +34,7 @@ function Home() {
   }, []);
 
 
-  // 
+  Utils.addEvent("609050bcb7999a1ced1210f9", "name", "start", "end", "description")
 
   return (
     <>

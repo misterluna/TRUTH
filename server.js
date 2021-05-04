@@ -11,8 +11,15 @@ dotenv.config()
 
 const app = express()
 
+
+// middleware
+app.use(express.json());
+app.use(express.urlencoded());
+
+
 //Creating API for user
 app.use('/api/users', userRoutes)
+
 
 const PORT = process.env.PORT || 5000
 
