@@ -35,7 +35,7 @@ class Utils {
   /**
    * Returns user.info[category] if object user is defined, null if it is not.
    * Example: getUserInfo(activeUser, "name") === "Oski"
-   * @param  {Object} user      The user's unique id.
+   * @param  {Object} user
    * @param  {String} category  The requested category
    * @return {any}              The requested value for that category (e.g. 19)
    */
@@ -103,7 +103,7 @@ class Utils {
    * description, all others are required.
    * 
    * Be sure to check the arguments: we don't know what the user put in!
-   * @param  {String} userId        The user's unique id.
+   * @param  {String} userId  
    * @param  {String} name          Also known as the category.
    * @param  {String} start         When the event started.
    * @param  {String} end           When the event ended.
@@ -111,7 +111,21 @@ class Utils {
    * @return {Number}               0 on success, -1 on failure. 
    */
    static addEvent(userId, name, start, end, description) {
-    const event = { "name": name, "start": start, "end": end, "description": description}
+    // check that start and end are in the correct format
+    const dateRegex = /^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])T(?:(?:([01]?\d|2[0-3]):)?([0-5]?\d):)?([0-5]?\d) [+|-]\d\d:\d\d$/;
+    if (!start.match(dateRegex) || !end.match(dateRegex) || start === end) {
+      console.log("Improper date format!");
+      return;
+    }
+
+    const duration = this.calculateDuration(start, end);
+    if (duration <= 0) {
+      console.log("Invalid event duration.");
+      return;
+    }
+
+    // create the POST request body
+    const event = { "name": name, "start": start, "end": end, "duration": duration, "description": description}
     
     const postData = async () => {
       const url = "api/users/create/" + userId + "/";
@@ -119,7 +133,6 @@ class Utils {
       return res.data;
     }
     const promise = postData();
-    console.log("post request promise", promise);
     return promise;
   }
 
@@ -167,7 +180,7 @@ class Utils {
 
   /**
    * Retrieve the user's current goal for the given category.
-   * @param  {String} userId        The user's unique id.
+   * @param  {String} userId  
    * @param  {String} category      The goal category.
    * @return {Number}               The goal in hours.
    */
@@ -179,7 +192,7 @@ class Utils {
   /**
    * Set the user's goal for the category to value. Setting the goal to NULL
    * is the same as deleting the goal. Setting it to zero is different.
-   * @param  {String} userId      The user's unique id.
+   * @param  {String} userId
    * @param  {String} category    The goal category.
    * @param  {Number} value       The goal in hours.
    * @return {Number}             0 on success, -1 on failure.
@@ -199,6 +212,71 @@ class Utils {
    static getCommunityData(category) {
     // TODO
     return;
+  }
+
+  // DATA FORMATTING UTILITIES
+
+  /**
+   * Convert the time to the standard format, which is YYYY-MM-DDTHH:MM:00 +07:00.
+   * @param  {Number} year
+   * @param  {Number} month
+   * @param  {Number} day
+   * @param  {Number} hour    In 24 hour time.
+   * @param  {Number} minute
+   * @return {String}
+   */
+  static formatDate(year, month, day, hour, minute){
+    let result = "" + year + "-";
+    if (month >= 10) {
+      result = result + month + "-";;
+    }
+    else{
+      result = result + "0" + month + "-";
+    }
+    if (day >= 10) {
+      result = result + day + "T";
+    }
+    else{
+      result = result + "0" + day + "T";
+    }
+    if (hour >= 10) {
+      result = result + hour + ":";
+    }
+    else{
+      result = result + "0" + hour + ":";
+    }
+    if (minute >= 10) {
+      result = result + minute + ":00 +07:00";
+    }
+    else{
+      result = result + "0" + minute + ":00 +07:00";
+    }
+    return result;
+  }
+
+  /**
+   * Calculate duration in hours based on two dates in standard format,
+   * YYYY-MM-DDTHH:MM:00 +07:00.
+   * @param  {String} start
+   * @param  {String} end
+   * @return {Number}         Duration in hours.
+   */
+  static calculateDuration(start, end){
+    const yearStart = parseInt(start.substring(0,4));
+    const monthStart = parseInt(start.substring(5,7));
+    const dayStart = parseInt(start.substring(8,10));
+    const hourStart = parseInt(start.substring(11,13));
+    const minuteStart = parseInt(start.substring(14,16));
+
+    const yearEnd = parseInt(end.substring(0,4));
+    const monthEnd = parseInt(end.substring(5,7));
+    const dayEnd = parseInt(end.substring(8,10));
+    const hourEnd = parseInt(end.substring(11,13));
+    const minuteEnd = parseInt(end.substring(14,16));
+
+    const startDateObj = new Date(yearStart, monthStart, dayStart, hourStart, minuteStart);
+    const endDateObj = new Date(yearEnd, monthEnd, dayEnd, hourEnd, minuteEnd);
+    return (endDateObj - startDateObj)/3600000;
   }
 
 }

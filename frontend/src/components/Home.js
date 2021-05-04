@@ -11,12 +11,9 @@ import {
   ListItem,
   Link,
 } from "@chakra-ui/react";
-
 import MenuBar from "./MenuBar";
-
 import HomeBG from "./assets/home-background.svg";
 import BlueLine from "./assets/sidebar-blue-line.svg";
-
 import Utils from "../Utils";
 
 const loremThree =
@@ -33,9 +30,7 @@ function Home() {
     getAsyncInfo();
   }, []);
 
-
-  Utils.addEvent("609050bcb7999a1ced1210f9", "name", "start", "end", "description")
-
+  Utils.addEvent("609050bcb7999a1ced1210f9", "class", "2021-05-04T14:15:00 +07:00", "2021-05-04T15:15:00 +07:00", "description");
   return (
     <>
       <MenuBar />
