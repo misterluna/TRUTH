@@ -16,12 +16,16 @@ import MenuBar from "./MenuBar";
 import HomeBG from "./assets/home-background.svg";
 import HomeBGTablet from "./assets/home-background-tablet.svg";
 
+
+
 const loremThree =
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet quam cras lacus nullam amet. Egestas varius accumsan sit nulla turpis turpis sem elit.";
 
 function Home() {
+
+
   const [isTablet] = useMediaQuery("(max-width: 1200px");
-  
+
   return (
     <>
       <VStack w="100vw" h="auto">
@@ -196,6 +200,7 @@ function FeatureSelector() {
     </HStack>
   );
 }
+
 function HomeContentTablet() {
   return (
     <VStack w="70vw" spacing={36}>
@@ -233,6 +238,7 @@ function HomeContentTablet() {
     </VStack>
   );
 }
+
 function FeatureSelectorTablet() {
   const features = [
     { id: 0, text: "Feature 1", imgSrc: "" },
