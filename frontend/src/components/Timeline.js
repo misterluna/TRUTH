@@ -68,14 +68,37 @@ function makeActivityList(data) {
   return activityList;
 }
 
+function dateStringToObj(s) {
+  // 2021-04-29T12:15:00 +07:00
+  let newDate = new Date();
+
+  newDate.setFullYear(s.substring(0, 4));
+  newDate.setMonth(parseInt(s.substring(5, 7)) - 1);
+  newDate.setDate(s.substring(8, 10));
+  newDate.setHours(
+    s.substring(11, 13),
+    s.substring(14, 16),
+    s.substring(17, 19)
+  );
+
+  return newDate;
+}
+
 function getEarliestHour(data) {
-  let startHourOnly = data.map((item) => item.start);
-  return Math.min(...startHourOnly);
+  // let startHourOnly = data.map((item) => {
+  //   console.log(item.start);
+  //   dateStringToObj(item.start);
+  // });
+  // console.log(startHourOnly);
+  // let minObj = Math.min(...startHourOnly);
+  // console.log("---- MIN OBJ: " + minObj);
+  return 7;
 }
 
 function getLatestHour(data) {
-  let endHourOnly = data.map((item) => item.end);
-  return Math.max(...endHourOnly);
+  // let endHourOnly = data.map((item) => dateStringToObj(item.end));
+  // return Math.max(...endHourOnly).getHours();
+  return 23;
 }
 
 function getColor(activityName) {
@@ -85,12 +108,22 @@ function getColor(activityName) {
   return ActivityColors[activityName];
 }
 
+function capitalize(s) {
+  return s.charAt(0).toUpperCase() + s.slice(1);
+}
+
+function makeDateText(pageDate) {
+  return (
+    (pageDate.getMonth() + 1).toString() + "/" + pageDate.getDate().toString()
+  );
+}
+
 function Timeline({ data, pageDate, setDateRelative }) {
   /* --- Layout Setup --- */
-  const totalH = "330px";
+  const totalH = "auto";
   const topMinH = "30px";
   const topH = "40px";
-  const botH = "222px";
+  const botH = "auto";
 
   /* --- Data + Variables Setup --- */
   if (!data) data = defaultData;
@@ -128,6 +161,7 @@ function Timeline({ data, pageDate, setDateRelative }) {
   function Right() {
     const [chartStart, chartEnd] = getChartRange(data);
     const timeLabels = generateTimeLabels(chartStart, chartEnd);
+    console.log(nameIndexList);
     return (
       <VStack
         alignItems="flex-start"
@@ -162,7 +196,7 @@ function Timeline({ data, pageDate, setDateRelative }) {
             minH={topMinH}
             transform="translateY(10px)"
           >
-            {dateText}
+            {makeDateText(pageDate)}
           </Text>
         </HStack>
 
@@ -178,13 +212,15 @@ function Timeline({ data, pageDate, setDateRelative }) {
         >
           {nameIndexList.map((item) => (
             <Text fontSize="sm" h="30px" w="">
-              {item.name}
+              {capitalize(item.name)}
             </Text>
           ))}
         </VStack>
       </VStack>
     );
   }
+
+  let masterH = "550px";
 
   return (
     <Box bg="white" p={4} w="100%" h={totalH}>
@@ -198,7 +234,7 @@ function Timeline({ data, pageDate, setDateRelative }) {
         <Box>
           <Left />
         </Box>
-        <Box flexGrow="1" overflowY="scroll">
+        <Box flexGrow="1" overflowY="scroll" h={masterH}>
           <Right />
         </Box>
       </HStack>
@@ -210,27 +246,35 @@ function TimelineChart({ data, nameIndexList, chartStart, chartEnd }) {
   const xPixelOffset = 112; // start * xPixelOffset
   const yPixelOffset = 37; // activityIndex * yPixelOffset
 
-  const getIndex = (activityName) => {
+  function getIndex(activityName) {
     let result = nameIndexList.filter((obj) => {
       return obj.name === activityName;
     });
     return result[0].index;
-  };
+  }
+
+  function timeStrToDecimal(s) {
+    console.log(s);
+    let hr = parseInt(s.substring(11, 13));
+    let min = parseInt(s.substring(14, 16)) / 60;
+    console.log(hr + min);
+    return hr + min;
+  }
 
   return (
     <Box position="relative">
       {data.map((obj) => {
         const index = getIndex(obj.name);
 
-        let xOffset = xPixelOffset * (obj.start - chartStart) + 56;
+        let xOffset =
+          xPixelOffset * (timeStrToDecimal(obj.start) - chartStart) + 56;
         if (chartStart !== 0) xOffset += xPixelOffset;
 
-        // const xOffset = xPixelOffset * (obj.start - chartStart) + 56;
         const yOffset = yPixelOffset * index + 14;
         return (
           <EventLine
-            start={obj.start}
-            end={obj.end}
+            start={timeStrToDecimal(obj.start)}
+            end={timeStrToDecimal(obj.end)}
             color={getColor(obj.name)}
             left={xOffset.toString() + "px"}
             top={yOffset.toString() + "px"}
