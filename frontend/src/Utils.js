@@ -317,6 +317,25 @@ class Utils {
     return (endDateObj - startDateObj)/3600000;
   }
 
+  static getLastTwoWeeksStandard(){
+    let today = new Date();
+    today.setDate(today.getDate());
+    let result = [];
+    for (let i = 0; i < 14; i++) {
+        let date = new Date();
+        date.setDate(today.getDate() - i);
+        const dateStandard = Utils.formatDate(
+            date.getFullYear(),
+            date.getMonth() + 1,
+            date.getDate(),
+            0,
+            0
+          );
+        result.push(dateStandard);
+    }
+    return result;
+  }
+
 }
 
 export default Utils;

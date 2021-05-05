@@ -13,19 +13,22 @@ const loremTwo =
 
 const goals = [
   {
-    title: "Goal 1",
+    title: "Sleep 😴",
+    category: "sleep",
     goal: 1,
     graphData: "",
     memo: loremTwo,
   },
   {
-    title: "Goal 2",
+    title: "Outdoors 🌱",
+    category: "outdoors",
     goal: 2,
     graphData: "",
     memo: loremTwo,
   },
   {
-    title: "Goal 3",
+    title: "Study 📖",
+    category: "study",
     goal: 3,
     graphData: "",
     memo: loremTwo,
@@ -93,7 +96,7 @@ function GoalCard({ data }) {
         Current goal:{"  " + data.goal.toString() + "  "}hr
         {data.goal > 1 ? "s" : ""}
       </Text>
-      <LineGraph></LineGraph>
+      <LineGraph category={data.category}/>
       <Text fontWeight="light" px={2} maxW="280px">
         {data.memo}
       </Text>
