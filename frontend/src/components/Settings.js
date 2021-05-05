@@ -13,14 +13,13 @@ import {
   TabPanels,
   Tab,
   TabPanel,
-  Image,
+  Icon,
   IconButton,
 } from "@chakra-ui/react";
 
 import PageContainer from "./PageContainer";
 
-import HidePasswordIcon from "./assets/icon-placeholder.svg";
-import ShowPasswordIcon from "./assets/icon-placeholder-empty.svg";
+import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 
 /*
     --- TODO: Get rid of minH... might mess up for small screens ---
@@ -30,13 +29,6 @@ function Settings() {
   return (
     <>
       <PageContainer currPage="Settings" pageContent={<SettingsContent />} />
-      {/* <HStack>
-        <Sidebar currPage="Settings" />
-        <Box bg="white" w="20vw"></Box>
-        <Box bg="gray.100" flexGrow="1" px={16} py={12} minH="100vh">
-          <SettingsContent />
-        </Box>
-      </HStack> */}
     </>
   );
 }
@@ -163,7 +155,7 @@ function PasswordSettingItem({ defaultVal }) {
             {passShown ? (
               <IconButton
                 aria-label="Hide password"
-                icon={<Image src={HidePasswordIcon} />}
+                icon={<Icon as={AiFillEye} />}
                 onClick={togglePassShown}
                 size="xs"
                 variant="ghost"
@@ -171,7 +163,7 @@ function PasswordSettingItem({ defaultVal }) {
             ) : (
               <IconButton
                 aria-label="Show password"
-                icon={<Image src={ShowPasswordIcon} />}
+                icon={<Icon as={AiFillEyeInvisible} />}
                 onClick={togglePassShown}
                 size="xs"
                 variant="ghost"

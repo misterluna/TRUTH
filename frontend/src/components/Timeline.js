@@ -1,7 +1,17 @@
 import React from "react";
-import { Box, VStack, HStack, StackDivider, Text } from "@chakra-ui/react";
+import {
+  Box,
+  VStack,
+  HStack,
+  StackDivider,
+  Text,
+  IconButton,
+  Icon,
+} from "@chakra-ui/react";
 
 import ActivityColors from "./assets/ActivityColors.js";
+
+import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 
 const defaultData = [
   {
@@ -63,6 +73,11 @@ function getEarliestHour(data) {
   return Math.min(...startHourOnly);
 }
 
+function getLatestHour(data) {
+  let endHourOnly = data.map((item) => item.end);
+  return Math.max(...endHourOnly);
+}
+
 function getColor(activityName) {
   console.log(
     "Name: " + activityName + " Color: " + ActivityColors[activityName]
@@ -70,7 +85,7 @@ function getColor(activityName) {
   return ActivityColors[activityName];
 }
 
-function Timeline({ data }) {
+function Timeline({ data, pageDate, setDateRelative }) {
   /* --- Layout Setup --- */
   const totalH = "330px";
   const topMinH = "30px";
@@ -91,6 +106,16 @@ function Timeline({ data }) {
     );
   }
 
+  function getChartRange(data) {
+    let earliest = getEarliestHour(data);
+    let latest = getLatestHour(data);
+
+    if (earliest > 0) earliest--;
+    if (latest < 24) latest++;
+
+    return [earliest, latest];
+  }
+
   function generateTimeLabels(min, max) {
     let timeLabels = [];
     for (let i = min; i < max + 1; i++) {
@@ -101,7 +126,8 @@ function Timeline({ data }) {
   }
 
   function Right() {
-    const timeLabels = generateTimeLabels(6, 24);
+    const [chartStart, chartEnd] = getChartRange(data);
+    const timeLabels = generateTimeLabels(chartStart, chartEnd);
     return (
       <VStack
         alignItems="flex-start"
@@ -114,7 +140,6 @@ function Timeline({ data }) {
           ))}
         </HStack>
         <Box flexGrow="1" h={botH} w="1370px" bg="white">
-          {/* Insert lines here... oof */}
           <TimelineChart
             data={data}
             chartStart={firstHour}
@@ -129,14 +154,17 @@ function Timeline({ data }) {
     return (
       <VStack h="100%" divider={<StackDivider borderColor="gray.100" />}>
         {/* --- LEFT TOP --- */}
-        <Text
-          fontSize="md"
-          h={topH}
-          minH={topMinH}
-          transform="translateY(10px)"
-        >
-          {dateText}
-        </Text>
+        <HStack h={topH} minH={topMinH}>
+          {/* <IconButton icon={<Icon as={AiOutlineLeft} />} /> */}
+          <Text
+            fontSize="md"
+            h={topH}
+            minH={topMinH}
+            transform="translateY(10px)"
+          >
+            {dateText}
+          </Text>
+        </HStack>
 
         {/* --- LEFT BOTTOM --- */}
         <VStack
@@ -178,7 +206,7 @@ function Timeline({ data }) {
   );
 }
 
-function TimelineChart({ data, nameIndexList, chartStart }) {
+function TimelineChart({ data, nameIndexList, chartStart, chartEnd }) {
   const xPixelOffset = 112; // start * xPixelOffset
   const yPixelOffset = 37; // activityIndex * yPixelOffset
 
@@ -193,7 +221,11 @@ function TimelineChart({ data, nameIndexList, chartStart }) {
     <Box position="relative">
       {data.map((obj) => {
         const index = getIndex(obj.name);
-        const xOffset = xPixelOffset * (obj.start - chartStart) + 56;
+
+        let xOffset = xPixelOffset * (obj.start - chartStart) + 56;
+        if (chartStart !== 0) xOffset += xPixelOffset;
+
+        // const xOffset = xPixelOffset * (obj.start - chartStart) + 56;
         const yOffset = yPixelOffset * index + 14;
         return (
           <EventLine

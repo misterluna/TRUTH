@@ -10,7 +10,7 @@ function PageContainer({ currPage, pageContent }) {
         <HStack w="100%">
           <Sidebar currPage={currPage} />
           <Box h="100vh" w="20vw" maxW="288px" visibility="none" />
-          <Box flexGrow="1" p={8}>
+          <Box flexGrow="1" w="80vw" maxW="1152" p={8}>
             {pageContent}
           </Box>
         </HStack>
