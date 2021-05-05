@@ -18,10 +18,15 @@ import Utils from "../Utils";
 let someDay = new Date();
 someDay.setDate(someDay.getDate() - 3);
 
+function generatePageDate(offSet) {
+  let today = new Date();
+  today.setDate(today.getDate() + offSet);
+  return today;
+}
+
 function Dashboard() {
   /* --- Frontend Hooks --- */
   const [pageDate, setPageDate] = useState(someDay);
-
   /* --- Accessing Backend --- */
   // Create the activeUser state hook for calling Utils.get methods.
   // Only use activeUser for get methods. When calling a set method in Utils,
@@ -39,32 +44,29 @@ function Dashboard() {
     getAsyncInfo();
   }, [USER_ID, update]);
 
-  console.log(
-    "--- TEST " +
-      Utils.formatDate(
-        pageDate.getFullYear(),
-        pageDate.getMonth(),
-        pageDate.getDate(),
-        0,
-        0
-      ).substring(0, 10)
-  );
-
   /* --- Gets events for the page's current date --- */
   function getEvents() {
+    console.log(
+      "--- FORMATTED: " +
+        Utils.formatDate(
+          pageDate.getFullYear(),
+          pageDate.getMonth() + 1,
+          pageDate.getDate(),
+          0,
+          0
+        )
+    );
     let events = Utils.getAllEvents(
       activeUser,
       Utils.formatDate(
         pageDate.getFullYear(),
-        pageDate.getMonth(),
+        pageDate.getMonth() + 1,
         pageDate.getDate(),
         0,
         0
       )
     );
-    console.log(events);
-    console.log(activeUser);
-
+    console.log("--- EVENTS: " + events);
     if (events !== undefined && events.length > 0) {
       console.log("--- Array not empty: " + events);
       return events;
