@@ -1,6 +1,6 @@
 import React from "react";
 import { Wrap, WrapItem, Box, Heading, Text, VStack } from "@chakra-ui/react";
-
+import LineGraph from "./LineGraph"
 import PageContainer from "./PageContainer";
 
 /*
@@ -93,7 +93,7 @@ function GoalCard({ data }) {
         Current goal:{"  " + data.goal.toString() + "  "}hr
         {data.goal > 1 ? "s" : ""}
       </Text>
-      <Box bg="gray.100" w="280px" h="180px"></Box>
+      <LineGraph></LineGraph>
       <Text fontWeight="light" px={2} maxW="280px">
         {data.memo}
       </Text>
