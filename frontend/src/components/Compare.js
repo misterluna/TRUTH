@@ -4,17 +4,16 @@ import Utils from "../Utils";
 import PageContainer from "./PageContainer";
 
 function Compare() {
+  const USER_ID = Utils.login();
+  let update = 0;
   // Create the activeUser state hook for calling Utils.get methods.
   // Only use activeUser for get methods. When calling a set method in Utils,
   // use the userId only and increment update after. This is to prevent infinite loops.
-  const USER_ID = Utils.login();
-  let update = 0;
-
   const [activeUser, setActiveUser] = useState([]);
   useEffect(() => {
     const getAsyncInfo = async () => {
       Utils.getUser(USER_ID).then((res) => {
-        setActiveUser(res); 
+        setActiveUser(res);
       });
     };
     getAsyncInfo();
@@ -34,26 +33,22 @@ function Compare() {
     "2021-05-04T14:15:00 +07:00",
     "2021-05-04T15:15:00 +07:00",
     "description"
-  )
+  );
   update++;
-  
-  // GET ALL EVENTS
 
+  // Get all events
   let events = Utils.getAllEvents(
     activeUser,
     Utils.formatDate(2021, 5, 3, 0, 0)
   );
-
   // Process events when activeUser promise has resolved
   if (events !== undefined && events.length > 0) {
-    console.log("events.length", events.length);
     for (let i = 0; i < events.length; i++) {
       const e = events[i];
       console.log("On " + e.start + ", Oski started " + e.name);
     }
   }
 
-  
   return <PageContainer page="Compare" pageContent={<CompareContent />} />;
 }
 

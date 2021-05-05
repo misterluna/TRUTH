@@ -1,4 +1,5 @@
 import axios from "axios";
+import { get } from "lodash";
 
 class Utils {
 
@@ -101,15 +102,18 @@ class Utils {
      static getAllEvents(user, date) {
       // if promise unfulfilled
       if (user === undefined || user.activities === undefined) {
-        console.log("User was undefined when getActivityTotal was called");
+        console.log("User was undefined when getAllEvents was called");
         return undefined;
       }
       if (user.activities === null || user.activities.length === 0) {
         return [];
       }
       const days = user.activities;
+      console.log("Searching for date ", date.substring(0, 10));
       for (let i = 0; i < days.length; i++) {
         const day = days[i];
+        console.log(day);
+        console.log("Compare to ", day.date);
         if (day.date === date.substring(0, 10)) {
           if (day.events.length === 0) {
             // no events in that activity object
